@@ -696,34 +696,56 @@
                     <p class="text-gray-700">토요일&nbsp;: 08:00 ~ 12:00 &nbsp;&nbsp;&nbsp;(일요일, 공휴일 휴무)</p>
                 </div>
 
-                <!-- 주소 1 -->
-                <div class="p-3 bg-gray-50 rounded-xl border border-gray-200 flex justify-between items-center">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-location-dot text-emerald-600 text-lg"></i>
-                        <div>
-                            <span class="font-bold text-brand-dark block text-xs">병원 주소</span>
-                            <span class="text-gray-800 text-sm">경기도 이천시 이섭대천로 1186 8층</span>
-                        </div>
-                    </div>
 
-                    <a href="https://map.naver.com/p/entry/place/11696767?placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202610061333%26locale%3Dko%26svcName%3Dmap_pcv5%26from%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202610061336%26locale%3Dko%26svcName%3Dmap_pcv5&c=17.98,0,0,0,dh" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1 shrink-0">
-                        <i class="fa-solid fa-map-location-dot"></i> 지도
-                    </a>
-                </div>
+     <!-- 주소 1 (병원) -->
+<div class="p-3 bg-gray-50 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div class="flex items-center gap-2">
+        <i class="fa-solid fa-location-dot text-emerald-600 text-lg"></i>
+        <div>
+            <span class="font-bold text-brand-dark block text-xs">병원 주소</span>
+            <span class="text-gray-800 text-sm">경기도 이천시 이섭대천로 1186 8층</span>
+        </div>
+    </div>
 
-                <!-- 주소 2 (주차장) -->
-                <div class="p-3 bg-gray-50 rounded-xl border border-gray-200 flex justify-between items-center">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-square-parking text-blue-600 text-lg"></i>
-                        <div>
-                            <span class="font-bold text-brand-dark block text-xs">주차장 주소</span>
-                            <span class="text-gray-800 text-sm">경기도 이천시 중리동 464-10</span>
-                        </div>
-                    </div>
-                    <a href="https://map.naver.com/p/entry/place/19065544?c=17.98,0,0,0,dh&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202610061333%26locale%3Dko%26svcName%3Dmap_pcv5" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1 shrink-0">
-                        <i class="fa-solid fa-square-parking"></i> 지도
-                    </a>
-                </div>
+    <!-- 지도 버튼 그룹 -->
+    <div class="flex items-center gap-1.5 shrink-0">
+        <!-- 네이버 지도 -->
+        <a href="https://map.naver.com/p/entry/place/11696767?placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202610061333%26locale%3Dko%26svcName%3Dmap_pcv5%26from%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202610061336%26locale%3Dko%26svcName%3Dmap_pcv5&c=17.98,0,0,0,dh" target="_blank" rel="noopener noreferrer" 
+           class="bg-[#03C75A] hover:bg-[#02b351] text-white text-xs font-semibold px-2.5 py-1.5 rounded-lg flex items-center gap-1 transition">
+            <i class="fa-solid fa-map-location-dot"></i> 네이버
+        </a>
+        <!-- 카카오맵 -->
+        <a href="https://map.kakao.com/?urlX=599151.0000000026&urlY=1049393.999999998&urlLevel=3&itemId=9918545&q=%EC%96%91%EC%A0%95%EB%B6%84%EC%82%B0%EB%B6%80%EC%9D%B8%EA%B3%BC%EC%9D%98%EC%9B%90&srcid=9918545&map_type=TYPE_MAP" target="_blank" rel="noopener noreferrer" 
+           class="bg-[#FEE500] hover:bg-[#ebd300] text-[#191919] text-xs font-semibold px-2.5 py-1.5 rounded-lg flex items-center gap-1 transition">
+            <i class="fa-solid fa-map-pin"></i> 카카오
+        </a>
+    </div>
+</div>
+
+<!-- 주소 2 (주차장) -->
+<div class="p-3 bg-gray-50 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div class="flex items-center gap-2">
+        <i class="fa-solid fa-square-parking text-blue-600 text-lg"></i>
+        <div>
+            <span class="font-bold text-brand-dark block text-xs">주차장 주소</span>
+            <span class="text-gray-800 text-sm">경기도 이천시 중리동 464-10</span>
+        </div>
+    </div>
+
+    <!-- 지도 버튼 그룹 -->
+    <div class="flex items-center gap-1.5 shrink-0">
+        <!-- 네이버 지도 -->
+        <a href="https://map.naver.com/p/entry/place/19065544?c=17.98,0,0,0,dh&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202610061333%26locale%3Dko%26svcName%3Dmap_pcv5" target="_blank" rel="noopener noreferrer" 
+           class="bg-[#03C75A] hover:bg-[#02b351] text-white text-xs font-semibold px-2.5 py-1.5 rounded-lg flex items-center gap-1 transition">
+            <i class="fa-solid fa-square-parking"></i> 네이버
+        </a>
+        <!-- 카카오맵 -->
+        <a href="https://map.kakao.com/?urlX=599259.9999999979&urlY=1049457.9999999993&urlLevel=3&itemId=1934411102&q=%EC%96%91%EC%A0%95%EB%B6%84%EC%82%B0%EB%B6%80%EC%9D%B8%EA%B3%BC%EC%9D%98%EC%9B%90%20%EC%98%A5%EC%99%B8%EC%A3%BC%EC%B0%A8%EC%9E%A5&srcid=1934411102&map_type=TYPE_MAP" target="_blank" rel="noopener noreferrer" 
+           class="bg-[#FEE500] hover:bg-[#ebd300] text-[#191919] text-xs font-semibold px-2.5 py-1.5 rounded-lg flex items-center gap-1 transition">
+            <i class="fa-solid fa-map-pin"></i> 카카오
+        </a>
+    </div>
+</div>
 
                 <!-- 전화번호 --> 
                 <div class="p-3 bg-orange-50 rounded-xl border border-orange-200 flex justify-between items-center">
