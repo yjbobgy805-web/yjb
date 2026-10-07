@@ -61,7 +61,7 @@
 <nav class="max-w-md mx-auto bg-brand-gray grid grid-cols-4 text-base sm:text-lg font-bold text-white text-center border-t border-gray-300">
             <button id="tab-national" onclick="showPage('national')" class="tab-btn py-3 px-1 transition border-r border-brand-dark bg-brand-gray hover:bg-opacity-90 whitespace-nowrap">공단검진</button>
             <button id="tab-total" onclick="showPage('total')" class="tab-btn py-3 px-1 transition border-r border-brand-dark bg-brand-gray hover:bg-opacity-90 whitespace-nowrap">종합검진</button>
-            <button id="tab-custom" onclick="showPage('custom')" class="tab-btn py-3 px-1 transition border-r border-brand-dark bg-brand-gray hover:bg-opacity-90 whitespace-nowrap">개별비급여</button>
+            <button id="tab-custom" onclick="showPage('custom')" class="tab-btn py-3 px-1 transition border-r border-brand-dark bg-brand-gray hover:bg-opacity-90 whitespace-nowrap">선택검사</button>
             <button id="tab-schedule" onclick="showPage('schedule')" class="tab-btn py-3 px-1 transition bg-brand-gray hover:bg-opacity-90 whitespace-nowrap">의료진스케줄</button>
         </nav>
     </header>
@@ -103,12 +103,12 @@
                         <span class="font-bold text-brand-dark text-base">종합검진</span>
                     </button>
 
-                    <!-- 개별 비급여 항목 -->
+                    <!-- 선택 검사 항목 -->
                     <button onclick="showPage('custom')" class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-orange transition flex flex-col items-center text-center group">
                         <div class="w-14 h-14 bg-orange-50 text-brand-orange rounded-2xl flex items-center justify-center mb-3 text-2xl group-hover:scale-105 transition">
                             <i class="fa-solid fa-stethoscope"></i>
                         </div>
-                        <span class="font-bold text-brand-dark text-base">개별 비급여</span>
+                        <span class="font-bold text-brand-dark text-base">선택 검사</span>
                     </button>
 
                     <!-- 의료진 스케줄 -->
@@ -131,7 +131,7 @@
 <div class="sticky top-[101px] z-30 bg-gray-100 py-2 -mx-4 px-4 overflow-x-auto hide-scrollbar flex gap-2 border-b border-gray-200 shadow-sm">
     <button onclick="scrollToSection('nat-general')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">일반검진</button>
     <button onclick="scrollToSection('nat-cancer')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">암검진</button>
-    <button onclick="scrollToSection('nat-notice')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">주의사항</button>
+    <button onclick="scrollToSection('nat-notice')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">안내사항</button>
 </div>
 
 <!-- 검진결과 카카오톡 안내 -->
@@ -323,7 +323,7 @@
             <div id="nat-notice" class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm">
                 <div class="flex items-center gap-2 border-b border-gray-100 pb-3 mb-4">
                     <i class="fa-solid fa-circle-exclamation text-brand-orange text-xl"></i>
-                    <h2 class="text-lg font-bold text-brand-dark">&nbsp;2026년 검진시 주의사항</h2>
+                    <h2 class="text-lg font-bold text-brand-dark">&nbsp;2026년 검진시 안내사항</h2>
                 </div>
                 
                 <div class="space-y-3">
@@ -968,7 +968,7 @@
     onclick="toggleBloodTest('brideBloodDetail', this)"
     class="mt-2 w-full flex items-center justify-between px-3 py-2 bg-gray-50 rounded-lg border border-gray-200 text-sm font-bold text-gray-700 hover:bg-gray-100 transition">
     <span>
-        <i class="fa-solid fa-list-check mr-1"></i> 혈액검사 자세히 보기
+        <i class="fa-solid fa-list-check mr-1"></i> 혈액·소변 검사 자세히 보기
     </span>
     <i class="fa-solid fa-chevron-down text-xs transition-transform"></i>
 </button>
@@ -1074,7 +1074,7 @@
             </p>
 
             <span class="font-bold text-brand-dark text-base">
-</br><i class="fa-solid fa-vial"></i>&nbsp;&nbsp;혈액검사</span>
+</br><i class="fa-solid fa-vial"></i>&nbsp;&nbsp;혈액·소변 검사</span>
             <p class="text-base text-gray-800 leading-relaxed mt-0.5">
                 간염검사(A, B, C형), 간기능검사, 일반혈액검사, 에이즈ㆍ매독검사, 혈액형검사, 갑상선호르몬검사, 소변검사
 <!-- 혈액검사 자세히 보기 -->
@@ -1182,7 +1182,7 @@
 
         </section>
 
-        <!-- 4. 개별 비급여 항목 페이지 -->
+        <!-- 4. 선택 검사 항목 페이지 -->
         <section id="page-custom" class="page-content hidden space-y-4">
 <!-- 고정 하단/서브 바 네비게이션 -->
 <div class="sticky top-[101px] z-30 bg-gray-100 py-2 -mx-4 px-4 overflow-x-auto hide-scrollbar flex gap-2 border-b border-gray-200 shadow-sm">
