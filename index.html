@@ -1584,16 +1584,23 @@
     </footer>
 
     <!-- 혈액종합검사 상세 모달 -->
-    <div id="bloodModal" class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-xl max-h-[85vh] flex flex-col">
-            <!-- 모달 헤더 -->
-            <div class="flex justify-between items-center border-b pb-3 shrink-0">
-                <h3 class="text-lg font-bold text-brand-dark">혈액 종합검사 상세 항목</h3>
-                <button onclick="closeBloodModal()" class="text-gray-400 hover:text-gray-600 text-2xl font-bold leading-none">&times;</button>
-            </div>
-            
-            <!-- 검사 항목 리스트 (스크롤 영역) -->
-            <div class="space-y-4 text-sm text-gray-700 overflow-y-auto pr-1 flex-1">
+<div id="bloodModal"
+     class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl
+                max-h-[85vh] flex flex-col">
+
+        <!-- 헤더 -->
+        <div class="flex justify-between items-center border-b pb-3 shrink-0">
+            <h3 class="text-lg font-bold text-brand-dark">혈액 종합검사 상세 항목</h3>
+            <button onclick="closeBloodModal()"
+                    class="text-gray-400 hover:text-gray-600 text-2xl font-bold leading-none">
+                &times;
+            </button>
+        </div>
+
+        <!-- 검사 항목만 스크롤 -->
+        <div class="space-y-4 text-sm text-gray-700 overflow-y-auto pr-1 flex-1 min-h-0 py-4">
+
                 
                 <!-- 1. 암표지자 (종양표지자) -->
                 <div class="p-3.5 bg-gray-50 rounded-xl border border-gray-100 space-y-2">
@@ -1723,17 +1730,16 @@
                         <li><span class="font-semibold text-gray-800">요침사 검사:</span> RBC, WBC, 상피세포(E.P cells), 원주체(Casts), 세균(Bacteria), 결정체(Crystals) 등 세포 관찰</li>
                     </ul>
                 </div>
+                </div> <!-- 검사 항목 스크롤 영역 끝 -->
 
-<button
-    type="button"
-    onclick="closeBloodModal()"
-    class="w-full shrink-0 rounded-xl bg-gray-200 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-300"
->
-    닫기
-</button>
-            </div>
-        </div>
-    </div>
+                <!-- 목록 바깥에 두어 항상 아래에 표시 -->
+                <button type="button"
+                        onclick="closeBloodModal()"
+                        class="w-full shrink-0 rounded-xl bg-gray-100 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-200">
+                    닫기
+                </button>    </div>
+</div>
+
 
 
 <script>
