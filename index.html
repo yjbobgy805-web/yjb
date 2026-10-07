@@ -1724,6 +1724,13 @@
                     </ul>
                 </div>
 
+<button
+    type="button"
+    onclick="closeBloodModal()"
+    class="w-full shrink-0 rounded-xl bg-gray-200 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-300"
+>
+    닫기
+</button>
             </div>
         </div>
     </div>
@@ -1790,12 +1797,15 @@ function closeCheckupRoute() {
         }
 
         // 혈액검사 모달 제어
-        function openBloodModal() {
-            document.getElementById('bloodModal').classList.remove('hidden');
-        }
-        function closeBloodModal() {
-            document.getElementById('bloodModal').classList.add('hidden');
-        }
+function closeBloodModal() {
+    document.getElementById('bloodModal').classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+}
+
+function openBloodModal() {
+    document.getElementById('bloodModal').classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+}
     </script>
 
 <script>
