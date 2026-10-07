@@ -120,6 +120,7 @@
                     </button>
                 </div>
             </div>
+
         </section>
 
         <!-- 2. 공단검진 안내 페이지 -->
@@ -133,7 +134,38 @@
     <button onclick="scrollToSection('nat-notice')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">주의사항</button>
 </div>
 
+<!-- 검진결과 카카오톡 안내 -->
+<div class="bg-orange-50 rounded-xl border border-orange-200 p-3.5 flex items-center gap-3 shadow-sm">
 
+    <img 
+        src="https://cdn.simpleicons.org/kakaotalk/FFCD00"
+        alt="카카오톡"
+        class="w-8 h-8 flex-shrink-0"
+    >
+
+    <div>
+        <p class="text-base font-bold text-gray-900">
+            모바일로 검진결과 받아보세요! (접수 시 신청) 
+        </p>
+        <p class="text-sm text-gray-600 font-medium mt-0.5">
+            카카오톡으로 받아보실 수 있습니다! (이메일 전송 가능)
+        </p>
+    </div>
+
+</div>
+<!-- 검진동선 알아보기 버튼 -->
+<div class="bg-white rounded-2xl p-4 border border-gray-200 shadow-sm">
+    <button
+        onclick="openCheckupRoute()"
+        class="w-full bg-brand-gray text-white py-3.5 px-4 rounded-xl font-bold text-base flex items-center justify-center gap-2 shadow-sm hover:bg-brand-orange transition"
+    >
+        <i class="fa-solid fa-route"></i>
+        검진동선 알아보기
+        <i class="fa-solid fa-chevron-right text-sm"></i>
+    </button>
+</div>
+
+                </div>
             <!-- 일반검진 -->
             <div id="nat-general" class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm space-y-4">
                 <div class="border-b border-gray-100 pb-3">
@@ -193,7 +225,7 @@
 
                     <div class="p-3.5 bg-orange-50/70 rounded-xl border border-orange-100">
                         <span class="font-bold text-brand-dark block text-base mb-1">
-<i class="fa-solid fa-question"></i>&nbsp;&nbsp;&nbsp;알 수 있는 질환</span>
+<i class="fa-regular fa-circle-question"></i>&nbsp;&nbsp;&nbsp;알 수 있는 질환</span>
                         <p class="text-base text-brand-dark font-medium">비만, 고혈압, 빈혈, 당뇨병, 신장질환, 간장질환, 구강상태</p>
                     </div>
                 </div>
@@ -215,7 +247,7 @@
                             <span class="text-xs bg-brand-orange text-white font-semibold px-2 py-0.5 rounded">40세 이상 남녀 (2년 주기)</span>
                         </div>
                         <p class="text-base text-gray-800 font-medium">일반 내시경검사</p>
-                        <p class="text-sm text-brand-gray font-bold mt-1.5">※ 수면비 별도</p>
+                        <p class="text-sm text-gray-500 font-bold mt-1.5">※ 수면비 별도</p>
                     </div>
 
                     <!-- 대장암 -->
@@ -226,8 +258,8 @@
                             <span class="text-xs bg-brand-orange text-white font-semibold px-2 py-0.5 rounded">50세 이상 남녀 (1년 주기)</span>
                         </div>
                         <p class="text-base text-gray-800 font-medium">분변잠혈검사</p>
-                        <p class="text-sm text-brand-gray font-bold mt-1.5">※ 분변잠혈반응검사란? 대변속의 혈액성분을 확인하는 검사</p>
-                        <p class="text-sm text-brand-gray font-bold mt-1">※ 이 검사에서 이상이 있어야 대장내시경 지원됨 (수면비 별도)</p>
+                        <p class="text-sm text-gray-500 font-bold mt-1.5">※ 분변잠혈반응검사란? 대변속의 혈액성분을 확인하는 검사</p>
+                        <p class="text-sm text-gray-500 font-bold mt-1.5">※ 이 검사에서 이상이 있어야 대장내시경 지원됨 (수면비 별도)</p>
                     </div>
 
                     <!-- 간암 -->
@@ -238,7 +270,7 @@
                             <span class="text-xs bg-brand-orange text-white font-semibold px-2 py-0.5 rounded">40세 이상 고위험군 (연 2회)</span>
                         </div>
                         <p class="text-base text-gray-800 font-medium">간초음파 + 혈액검사(AFP)</p>
-                        <p class="text-sm text-brand-gray font-bold mt-1.5">※ 고위험군이란? 간경변증, C형간염항체 양성, 만성 간질환, B형간염항원 양성 등</p>
+                        <p class="text-sm text-gray-500 font-bold mt-1.5">※ 고위험군이란? 간경변증, C형간염항체 양성, 만성 간질환, B형간염항원 양성 등</p>
                     </div>
 
                     <!-- 자궁경부암 -->
@@ -249,7 +281,7 @@
                             <span class="text-xs bg-brand-orange text-white font-semibold px-2 py-0.5 rounded">20세 이상 여성 (2년 주기)</span>
                         </div>
                         <p class="text-base text-gray-800 font-medium">자궁경부질도말검사</p>
-                        <p class="text-sm text-brand-gray font-bold mt-1.5">※ 생리 중에는 검사 어려움</p>
+                        <p class="text-sm text-gray-500 font-bold mt-1.5">※ 생리 중에는 검사 어려움 (생리 마지막 날로부터 7일 후 검사가능)</p>
                     </div>
 
                     <!-- 유방암 -->
@@ -260,7 +292,7 @@
                             <span class="text-xs bg-brand-orange text-white font-semibold px-2 py-0.5 rounded">40세 이상 여성 (2년 주기)</span>
                         </div>
                         <p class="text-base text-gray-800 font-medium">유방 X-선 검사</p>
-                        <p class="text-sm text-brand-gray font-bold mt-1.5">※ 유방촬영에 AI판독 도입되어 더 정확한 판독이 가능합니다!</p>
+                        <p class="text-sm text-gray-500 font-bold mt-1.5">※ 유방촬영에 AI판독 도입되어 더 정확한 판독이 가능합니다!</p>
                     </div>
 
 
@@ -286,48 +318,52 @@
                 </div>
             </div>
 
+
             <!-- 검진시 주의사항 -->
             <div id="nat-notice" class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm">
                 <div class="flex items-center gap-2 border-b border-gray-100 pb-3 mb-4">
                     <i class="fa-solid fa-circle-exclamation text-brand-orange text-xl"></i>
-                    <h2 class="text-lg font-bold text-brand-dark">2026년 검진시 주의사항</h2>
+                    <h2 class="text-lg font-bold text-brand-dark">&nbsp;2026년 검진시 주의사항</h2>
                 </div>
                 
                 <div class="space-y-3">
                     <div class="p-2.5 bg-orange-50/70 rounded-xl border border-orange-100 flex items-start gap-3">
                         <i class="fa-solid fa-circle-check text-brand-orange mt-1 text-base"></i>
-                        <p class="text-base text-brand-dark font-bold">올해는 짝수년 출생자들이 대상자 입니다.</p>
-                    </div>
-
-                    <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
-                        <i class="fa-solid fa-utensils text-brand-orange mt-1 text-base"></i>
-                        <p class="text-base text-gray-800 font-medium">8시간 이상 금식해서 내원해 주세요.</p>
+                        <p class="text-base text-brand-dark font-bold">올해 짝수년 출생자들이 대상자 입니다.</p>
                     </div>
 <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
     <!-- 아이콘: FontAwesome 신분증(id-card) 아이콘 -->
     <i class="fa-solid fa-address-card text-brand-orange mt-1 text-base"></i>
     <p class="text-base text-gray-800 font-medium">내원 시 신분증을 반드시 지참해 주세요.</p>
 </div>
+
+                    <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
+                        <i class="fa-solid fa-utensils text-brand-orange mt-1 text-base"></i>
+                        <p class="text-base text-gray-800 font-medium">8시간 이상 금식해서 내원해 주세요.</p>
+                    </div>
+
                     <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
                         <i class="fa-solid fa-pills text-brand-orange mt-1 text-base"></i>
+                     <div>
                         <p class="text-base text-gray-800 font-medium">평소 복용 중인 약이 있다면 담당의와 상담하세요.</p>
+<p class="text-sm text-brand-orange font-medium mt-0.5">※ 혈압약을 복용하는 경우 : 검사 당일 아침 이른 시간에 소량의 물로 복용하시고, 약을 지참하고 오시기 바랍니다. </br> ※ 당뇨약을 복용하시는 경우 : 검사 당일 드시지 마시고 오시기 바랍니다. </p>
+                        </div>
                     </div>
 
                     <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
                         <i class="fa-solid fa-gem text-brand-orange mt-1 text-base"></i>
                         <div>
                             <p class="text-base text-gray-800 font-medium">탈의시 목걸이는 빼주세요.</p>
-                            <p class="text-sm text-brand-orange font-medium mt-0.5">(분실시 책임지지 않습니다.)</p>
+                            <p class="text-sm text-brand-orange font-medium mt-0.5">※ 분실시 책임지지 않습니다.</p>
                         </div>
                     </div>
 
-              <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
+                <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
     <i class="fa-solid fa-shirt text-brand-orange mt-1 text-base"></i>
     <p class="text-base text-gray-800 font-medium">
         여성분은 브래지어도 탈의하시고 가운을 입으세요.
         <span class="block text-sm text-brand-orange font-medium mt-0.5">
-            (스포츠브라, 수유브라도 탈의해주세요)
-        </span>
+            ※ 스포츠브라, 수유브라도 탈의해주세요        </span>
     </p>
 </div>
 
@@ -336,8 +372,233 @@
                         <p class="text-base text-gray-800 font-medium">생리중, 임신중, 임신가능성이 있으시거나 수유중인 분은 말씀해 주세요.</p>
                     </div>
 
+<!-- 검진동선 팝업 -->
+<div id="checkupRouteModal"
+     class="fixed inset-0 z-[100] hidden">
+
+    <!-- 배경 -->
+    <div
+        class="absolute inset-0 bg-black/50"
+        onclick="closeCheckupRoute()">
+    </div>
+
+    <!-- 팝업 -->
+    <div class="relative flex items-center justify-center min-h-screen p-4">
+
+        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden">
+
+            <!-- 팝업 헤더 -->
+            <div class="bg-brand-gray text-white px-5 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-route text-orange-300"></i>
+                    <h2 class="text-lg font-bold">검진동선 안내</h2>
                 </div>
+
+                <button
+                    onclick="closeCheckupRoute()"
+                    class="text-white/80 hover:text-white text-xl"
+                    aria-label="닫기"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
+
+            <!-- 팝업 내용 -->
+            <div class="p-5">
+
+                <p class="text-sm text-gray-500 font-medium mb-4">
+                    검진 순서는 검사 항목에 따라 달라질 수 있습니다.
+                </p>
+
+                <div class="space-y-1.5">
+
+                    <!-- STEP 1 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7 rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            1
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                                <i class="fa-solid fa-clipboard-check text-brand-orange mr-1"></i>
+                                1층에서 문진표 작성  
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            2
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                                <i class="fa-solid fa-shirt text-brand-orange mr-1"></i>
+                                8층에서 접수 및 탈의 <span class="text-xs text-gray-500 font-medium">(검진복 착용)</span>
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            3
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                                <i class="fa-solid fa-weight-scale text-brand-orange mr-1"></i>
+                                신체계측 및 기초검사 <span class="text-xs text-gray-500 font-medium">(신장/체중/시력/청력/혈압)</span>
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            4
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                                <i class="fa-solid fa-vial text-brand-orange mr-1"></i>
+                                채혈 및 채뇨
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 5 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            5
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                              <i class="fa-solid fa-x-ray text-brand-orange mr-1"></i>
+                                흉부 X선, 유방 X선<span class="text-xs text-gray-500 font-medium">(검진 대상자)</span>
+
+                            </p>
+                        </div>
+                    </div>
+       <!-- STEP 6 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            6
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                              <i class="fa-solid fa-bone text-brand-orange mr-1"></i>
+                                골밀도 <span class="text-xs text-gray-500 font-medium">(검진 대상자-만 54세, 60세, 66세)</span>
+
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <!-- STEP 7 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            7
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                                <i class="fa-solid fa-wave-square text-brand-orange mr-1"></i>
+                                간 초음파 검사 <span class="text-xs text-gray-500 font-medium">(검진 대상자)</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 8 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            8
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                                <i class="fa-solid fa-person-dress text-pink-500 mr-1"></i>
+                                여성검진(자궁경부암검사) <span class="text-xs text-gray-500 font-medium">(검진 대상자)</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 9 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            9
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                                <i class="fa-solid fa-lungs text-brand-orange mr-1"></i>
+                                폐기능 검사 <span class="text-xs text-gray-500 font-medium">(검진 대상자-56세, 66세)</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 10 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            10
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                                <i class="fa-solid fa-tooth text-brand-orange mr-1"></i>
+                                구강검진  
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 11 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            11
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                                <i class="fa-solid fa-stethoscope text-brand-orange mr-1"></i>
+                                 내시경 <span class="text-xs text-gray-500 font-medium">(검진 대상자)</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 12 -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7  rounded-full bg-brand-orange text-white flex items-center justify-center font-bold flex-shrink-0">
+                            12
+                        </div>
+                        <div class="flex-1 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <p class="font-bold text-gray-900">
+                                <i class="fa-solid fa-comments text-brand-orange mr-1"></i>
+                                결과 안내 및 상담
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 하단 안내 -->
+                <div class="mt-4 p-3 bg-orange-50 rounded-xl border border-orange-100">
+                    <p class="text-sm text-gray-700 font-medium leading-relaxed">
+                        <i class="fa-solid fa-circle-info text-brand-orange mr-1"></i>
+                        검사 순서는 당일 검사 상황 및 검진 항목에 따라 변경될 수 있습니다.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- 닫기 버튼 -->
+            <div class="px-5 pb-5">
+                <button
+                    onclick="closeCheckupRoute()"
+                    class="w-full py-3 bg-gray-100 text-gray-700 rounded-xl font-bold hover:bg-gray-200 transition"
+                >
+                    닫기
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
         </section>
 
         <!-- 3. 종합검진 안내 페이지 -->
@@ -349,7 +610,7 @@
 <button onclick="scrollToSection('tot-newlywed')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">신혼부부 검진</button>
 </div>
 <!-- 종합검진 전체 -->
-<div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm space-y-4">
+<div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm space-y-4">
 
 <!-- 위 종합검진 -->
 <div id="tot-stomach" class="bg-gray-50 rounded-xl p-4 border border-gray-200 space-y-3">
@@ -414,7 +675,212 @@
         혈뇨, 단백뇨, 케톤, 세균 등
     </p>
 
+<!-- 혈액검사 자세히 보기 -->
 
+<div class="mt-2 pl-2">
+    <button type="button"
+        onclick="toggleBloodTest('generalBloodDetail', this)"
+        class="w-full flex items-center justify-between px-3 py-2 bg-gray-50 rounded-lg border border-gray-200 text-sm font-bold text-gray-700 hover:bg-gray-100 transition">
+        <span>
+            <i class="fa-solid fa-list-check mr-1"></i>
+            혈액검사 자세히 보기
+        </span>
+        <i class="fa-solid fa-chevron-down text-xs transition-transform"></i>
+    </button>
+
+<div id="generalBloodDetail"
+    class="hidden mt-2 bg-gray-50 rounded-lg border border-gray-200 p-3">
+
+<div class="space-y-3 text-sm text-gray-700">
+
+    <!-- 암표지자 -->
+    <div>
+        <p class="font-bold text-brand-dark">암표지자</p>
+        <p>AFP 간암, 간염, 간경화 질환</p>
+        <p>CEA 대장암, 소화기암 질환</p>
+        <p>CA 19-9 췌장암, 담관암 질환</p>
+        <p>CA125(여) 난소암 질환</p>
+        <p>PSA (남) 전립선암 검사</p>
+    </div>
+
+    <!-- 갑상선 질환 -->
+    <div>
+        <p class="font-bold text-brand-dark">갑상선 질환</p>
+        <p>Free T4 갑상선 기능 저하/항진</p>
+        <p>TSH 갑상선 기능 저하/항진</p>
+    </div>
+
+    <!-- 간기능 검사 -->
+    <div>
+        <p class="font-bold text-brand-dark">간기능 검사</p>
+        <p>GGT (γ-GTP) 간·담도 건강 확인</p>
+        <p>ALP(Alkalinephosphatase) 담도·골격 건강 확인</p>
+        <p>ALT (GPT) 간세포 손상 평가</p>
+        <p>AST (GOT) 급성간염,심근경색</p>
+        <p>Total Bilirubin 간질환,폐쇄황달</p>
+        <p>Direct Bilirubin 급성간염,간병변,간암</p>
+        <p>Indirect Bilirubin 황달 평가</p>
+        <p>Total Protein 영양부족,간경변</p>
+        <p>Globulin 면역·염증 확인</p>
+        <p>Albumin 간질환</p>
+        <p>A/G ratio 간 합성능</p>
+    </div>
+
+    <!-- 염증질환 검사 -->
+    <div>
+        <p class="font-bold text-brand-dark">염증질환 검사</p>
+        <p>Segmented neutrophil 성숙한 호중구</p>
+        <p>Band 미성숙 호중구</p>
+        <p>Lymphocyte 림프구</p>
+        <p>Monocyte 단핵구</p>
+        <p>Eoslinophil 호산구</p>
+        <p>Basophil 호염기구</p>
+        <p>CRP 염증 상태 확인</p>
+    </div>
+
+    <!-- 심혈관 질환 -->
+    <div>
+        <p class="font-bold text-brand-dark">심혈관 질환</p>
+        <p>Total Cholesterol 콜레스테롤 총량</p>
+        <p>Triglyceride (TG) 중성지방</p>
+        <p>HDL-Cholesterol 좋은 콜레스테롤</p>
+        <p>LDL-Cholesterol 나쁜 콜레스테롤</p>
+    </div>
+
+    <!-- 대사질환 -->
+    <div>
+        <p class="font-bold text-brand-dark">대사질환</p>
+        <p>25-(OH) Vitamin D 일광조사과다/부족/구루병</p>
+    </div>
+
+    <!-- 신장 질환 검사 -->
+    <div>
+        <p class="font-bold text-brand-dark">신장 질환 검사</p>
+        <p>B/C ratio 신부전,신장기능장애</p>
+        <p>BUN 신부전,신장기능장애</p>
+        <p>Creatinine 신부전,신장기능장애</p>
+        <p>eGFR(MDRD) 만성신장질환</p>
+        <p>Uric acid 통풍,핵산대사이상</p>
+    </div>
+
+    <!-- 혈액형 검사 -->
+    <div>
+        <p class="font-bold text-brand-dark">혈액형 검사</p>
+        <p>ABO 혈액형검사 ABO Type 검사</p>
+        <p>Rh 혈액형검사 Rh형 검사</p>
+    </div>
+
+    <!-- 성병검사 -->
+    <div>
+        <p class="font-bold text-brand-dark">성병검사</p>
+        <p>RPR 매독관련</p>
+    </div>
+
+    <!-- 간염 검사 -->
+    <div>
+        <p class="font-bold text-brand-dark">간염 검사</p>
+        <p>HAV Ab IgG A형간염 감염 여부</p>
+        <p>HBs Ag B형간염 감염 여부</p>
+        <p>HBs Ab B형간염 항체 여부</p>
+        <p>Anti-HCV C형간염 감염 여부</p>
+    </div>
+
+    <!-- 골격질환 -->
+    <div>
+        <p class="font-bold text-brand-dark">골격질환</p>
+        <p>Calcium(Ca) 골격/칼슘 상태 확인</p>
+        <p>RA Factor 류마티스관절염 질환</p>
+    </div>
+
+    <!-- 전해질검사 -->
+    <div>
+        <p class="font-bold text-brand-dark">전해질검사</p>
+        <p>K(Potassium) 칼륨 농도</p>
+        <p>Na(Sodium) 나트륨 농도</p>
+        <p>P(Phosphorus) 인 농도</p>
+        <p>Mg(magnesium) 마그네슘 농도</p>
+        <p>Chloride (Cl) 염화물 농도</p>
+    </div>
+
+    <!-- 철분 빈혈 -->
+    <div>
+        <p class="font-bold text-brand-dark">철분 빈혈</p>
+        <p>Ferritin 철분 상태 및 염증 확인</p>
+        <p>Fe(Iron) 혈청 철분</p>
+        <p>TIBC 총 철 결합 능력</p>
+        <p>UIBC 불포화 철 결합 능력</p>
+    </div>
+
+    <!-- 근육 질환 -->
+    <div>
+        <p class="font-bold text-brand-dark">근육 질환</p>
+        <p>LDH 근육·심장 손상 지표</p>
+        <p>CK(Creatine Kinase, CPK) 근육 질환</p>
+    </div>
+
+    <!-- 췌장 소화기 -->
+    <div>
+        <p class="font-bold text-brand-dark">췌장 소화기</p>
+        <p>Amylase 췌장염,췌장암 질환</p>
+        <p>Lipase 췌장 질환(췌장염 등)</p>
+    </div>
+
+    <!-- 내분비 -->
+    <div>
+        <p class="font-bold text-brand-dark">내분비</p>
+        <p>Glucose 당뇨 관련 질환</p>
+        <p>HbA1c 당화혈색소(당뇨)</p>
+    </div>
+
+    <!-- 혈액질환검사 -->
+    <div>
+        <p class="font-bold text-brand-dark">혈액질환검사</p>
+        <p>Hb(Hemoglobin) 혈액 산소 운반 단백질</p>
+        <p>Hct(Hematocrit) 혈액 적혈구 비율</p>
+        <p>RBC 적혈구 수치</p>
+        <p>PCT 혈소판 총량</p>
+        <p>Platelet 혈소판 수</p>
+        <p>PDW 혈소판 크기 분포</p>
+        <p>RDW 적혈구 크기 다양성</p>
+        <p>WBC 백혈구 수치</p>
+        <p>MPV 평균 혈소판 크기</p>
+        <p>MCV 평균적혈구용적</p>
+        <p>MCH 평균적혈구혈색소량</p>
+        <p>MCHC 평균적혈구혈색소농도</p>
+    </div>
+
+    <!-- 소변검사 -->
+    <div>
+        <p class="font-bold text-brand-dark">소변검사</p>
+        <p>PH 소변 산도</p>
+        <p>Nitrite 요로 감염</p>
+        <p>Specific Gravity 소변 농도 확인</p>
+        <p>Protein 소변 단백질 확인</p>
+        <p>Glucose 당뇨 평가</p>
+        <p>Ketone 케톤체 확인</p>
+        <p>Bilirubin 소변 빌리루빈 확인</p>
+        <p>Occult Blood 잠혈 확인</p>
+        <p>Urobilinogen 간 기능 평가</p>
+        <p>Leukocyte esterase 요로 감염 평가</p>
+    </div>
+
+    <!-- 요침사 -->
+    <div>
+        <p class="font-bold text-brand-dark">요침사 (Flow cytometry)</p>
+        <p>RBC 적혈구 관찰</p>
+        <p>WBC 백혈구 관찰</p>
+        <p>E.P cells 상피세포 관찰</p>
+        <p>Casts 원주체 관찰</p>
+        <p>Bacteria 세균 존재 확인</p>
+        <p>Crystals 결정체 관찰</p>
+        <p>Others 기타 성분 확인</p>
+    </div>
+
+</div>
+
+</div>
+
+</div>
     <span class="font-bold text-brand-dark text-base">
 </br><i class="fa-solid fa-venus"></i>&nbsp;&nbsp;여성특화검사</span>
     <p class="text-base text-pink-600 font-medium mt-0.5">
@@ -436,7 +902,7 @@
 
         <div class="p-4 bg-white rounded-xl border border-gray-200 text-center">
             <p class="font-bold text-brand-dark text-lg">
-                위 종합검진 + 대장내시경
+                위 종합검진 +     <span class="font-bold text-green-600">대장 내시경</span>
                 <span class="text-brand-orange text-sm font-semibold">(예약필수)</span>
             </p>
         </div>
@@ -450,19 +916,22 @@
 <i class="fa-solid fa-utensils"></i>&nbsp;&nbsp;검진 후 식사(죽) 제공
         </p>
         <p class="font-medium text-base text-gray-800">
-<i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;대장내시경은 예약필수 (5-7일 전)
+<i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;위 · 대장 종합검진은 예약필수(7일 전), 위 종합검진은 당일가능(금식 후)
         </p>
         <p class="font-medium text-base text-gray-800">
 <i class="fa-regular fa-credit-card"></i> &nbsp;&nbsp;내시경 시 헬리코박터검사, 조직검사, 용종절제술시 추가비용 (접수에 문의)
         </p>
-    </div>
+  <p class="font-medium text-base text-gray-800">
+<i class="fa-solid fa-square-poll-horizontal"></i>&nbsp;&nbsp;종검 후 결과 상담은 평일 오후 2시~4시 사이 방문   
+        </p>
+     </div>
 
 
     <!-- CT 관련 안내 -->
     <div class="p-3.5 bg-orange-50 rounded-xl border border-orange-200">
         <p class="text-sm text-brand-dark font-bold leading-relaxed">
-<i class="fa-regular fa-thumbs-up"></i> &nbsp;&nbsp;국가검진시 종합검진 같이하시면 CT 한 부위 같이 해드려요!
-            (암검진과 일반검진 모두 해당될 경우) (접수에 문의)
+<i class="fa-regular fa-thumbs-up"></i> &nbsp;&nbsp;양정분 특별 혜택 ! </br>국가검진시 종합검진 같이하시면 CT 한 부위 같이 해드려요!
+            (암검진과 일반검진 모두 해당될 경우)  
         </p>
     </div>
 
@@ -472,7 +941,7 @@
 <div id="tot-newlywed" class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm space-y-4">
     <div class="bg-brand-gray text-white p-4 rounded-xl flex justify-between items-center shadow-sm">
         <h2 class="text-lg font-bold">신혼부부 종합검진</h2>
-        <span class="text-base font-extrabold text-orange-300">남 22만 / 여 22만</span>
+        <span class="text-base font-extrabold text-orange-300">신랑 18만 / 신부 22만</span>
     </div>
 
     <!-- 신부 -->
@@ -482,31 +951,103 @@
 <i class="fa-solid fa-heart"></i>&nbsp;&nbsp;신부</span>
 </div>
 
-        <div>
+         <div class="p-3 bg-white rounded-xl border border-gray-200">
             <span class="font-bold text-brand-dark text-base">
 <i class="fa-solid fa-heart-circle-bolt"></i>&nbsp;&nbsp;기초검사</span>
             <p class="text-base text-gray-800 mt-0.5">
-                기초체성분검사, 흉부촬영
+                혈압, 청력, 시력, 체성분(인바디), 흉부 X-선 
             </p>
-        </div>
 
-        <div>
             <span class="font-bold text-brand-dark text-base">
-</br><i class="fa-solid fa-vial"></i>&nbsp;&nbsp;혈액검사</span>
+</br><i class="fa-solid fa-vial"></i>&nbsp;&nbsp;혈액·소변 검사</span>
             <p class="text-base text-gray-800 leading-relaxed mt-0.5">
                 간염검사(A, B, C형), 간기능검사, 일반혈액검사, 에이즈ㆍ매독검사, 혈액형검사, 갑상선호르몬검사, 풍진검사, 소변검사
             </p>
+<!-- 혈액검사 자세히 보기 -->
+<button type="button"
+    onclick="toggleBloodTest('brideBloodDetail', this)"
+    class="mt-2 w-full flex items-center justify-between px-3 py-2 bg-gray-50 rounded-lg border border-gray-200 text-sm font-bold text-gray-700 hover:bg-gray-100 transition">
+    <span>
+        <i class="fa-solid fa-list-check mr-1"></i> 혈액검사 자세히 보기
+    </span>
+    <i class="fa-solid fa-chevron-down text-xs transition-transform"></i>
+</button>
+
+<div id="brideBloodDetail" class="hidden mt-2 bg-gray-50 rounded-lg border border-gray-200 p-3">
+    <div class="space-y-2 text-sm text-gray-700">
+
+        <div>
+            <p class="font-bold text-brand-dark">간기능</p>
+            <p>AST (GOT), ALT (GPT), GGT (γ-GTP)</p>
         </div>
 
         <div>
+            <p class="font-bold text-brand-dark">간염</p>
+            <p>B형간염 항원(HBsAg), B형간염 항체(Anti-HBs), C형간염 항체(Anti-HCV), A형간염 항체(HAV Ab IgG)</p>
+        </div>
+
+        <div>
+            <p class="font-bold text-brand-dark">신장질환</p>
+            <p>BUN, Creatinine</p>
+        </div>
+
+        <div>
+            <p class="font-bold text-brand-dark">대사질환</p>
+            <p>혈당(Glucose), 총콜레스테롤(Total Cholesterol), 중성지방(Triglyceride), HDL-콜레스테롤(HDL-Cholesterol)</p>
+        </div>
+
+        <div>
+            <p class="font-bold text-brand-dark">혈액질환</p>
+            <p>백혈구(WBC), 적혈구(RBC), 혈색소(Hemoglobin), 적혈구용적률(Hematocrit), MCV, MCH, MCHC, 혈소판(Platelet)</p>
+        </div>
+
+        <div>
+            <p class="font-bold text-brand-dark">혈액형</p>
+            <p>ABO 혈액형, Rh 혈액형</p>
+        </div>
+    <div>
+            <p class="font-bold text-brand-dark">심혈관</p>
+            <p>총콜레스테롤(Cholesterol, total), 중성지방(Triglyceride), HDL-콜레스테롤(HDL-cholesterol)</p>
+        </div>
+
+        <div>
+            <p class="font-bold text-brand-dark">성병질환</p>
+            <p>매독검사(RPR), HIV Ag/Ab</p>
+        </div>
+
+        <div>
+            <p class="font-bold text-brand-dark">갑상선 질환</p>
+            <p>TSH, Free T4</p>
+        </div>
+
+        <div>
+            <p class="font-bold text-brand-dark">풍진</p>
+            <p>풍진항체(Rubella virus IgG), 풍진항체(Rubella virus IgM)</p>
+        </div>
+
+        <div>
+            <p class="font-bold text-brand-dark">소변검사</p>
+            <p>
+소변검사(Urine 10), pH, Nitrite, 비중(S.G), 단백질(Protein), 요당(Glucose), 케톤(Ketone), 빌리루빈(Bilirubin), 잠혈(Occult Blood), 유로빌리노겐(Urobilinogen), 백혈구 에스터라제(Leukocyte esterase)
+            </p>
+            <p class="mt-1">
+                Microscopic (Flow Cytometry), RBC, WBC, E.P cells,
+                Casts, Bacteria, Crystals, Others
+            </p>
+                 </div>
+
+    </div>
+</div>
+
+
+
+
             <span class="font-bold text-brand-dark text-base">
 </br><i class="fa-solid fa-briefcase-medical"></i>&nbsp;&nbsp;초음파</span>
             <p class="text-base text-gray-800 leading-relaxed mt-0.5">
                 자궁·난소초음파, 유방초음파, 갑상선초음파
             </p>
-        </div>
 
-        <div>
             <span class="font-bold text-brand-dark text-base">
 </br><i class="fa-solid fa-venus"></i>&nbsp;&nbsp;여성특화검사</span>
             <p class="text-base text-gray-800 leading-relaxed mt-0.5">
@@ -522,23 +1063,104 @@
 <i class="fa-solid fa-heart"></i>&nbsp;&nbsp;신랑</span>
 </div>
 
-        <div>
+<div class="space-y-3">
+
+         <div class="p-3 bg-white rounded-xl border border-gray-200">
+
             <span class="font-bold text-brand-dark text-base">
 <i class="fa-solid fa-heart-circle-bolt"></i>&nbsp;&nbsp;기초검사</span>
             <p class="text-base text-gray-800 mt-0.5">
                 기초체성분검사, 흉부촬영
             </p>
-        </div>
 
-        <div>
             <span class="font-bold text-brand-dark text-base">
 </br><i class="fa-solid fa-vial"></i>&nbsp;&nbsp;혈액검사</span>
             <p class="text-base text-gray-800 leading-relaxed mt-0.5">
                 간염검사(A, B, C형), 간기능검사, 일반혈액검사, 에이즈ㆍ매독검사, 혈액형검사, 갑상선호르몬검사, 소변검사
+<!-- 혈액검사 자세히 보기 -->
+<button type="button"
+    onclick="toggleBloodTest('groomBloodDetail', this)"
+    class="mt-2 w-full flex items-center justify-between px-3 py-2 bg-gray-50 rounded-lg border border-gray-200 text-sm font-bold text-gray-700 hover:bg-gray-100 transition">
+    <span>
+        <i class="fa-solid fa-list-check mr-1"></i> 혈액·소변검사 자세히 보기
+    </span>
+    <i class="fa-solid fa-chevron-down text-xs transition-transform"></i>
+</button>
+<div id="groomBloodDetail" class="hidden mt-2 bg-gray-50 rounded-lg border border-gray-200 p-3">
+    <div class="space-y-2 text-sm text-gray-700">
+
+        <!-- 간기능 -->
+        <div>
+            <p class="font-bold text-brand-dark">간기능</p>
+            <p>AST (GOT), ALT (GPT), GGT (γ-GTP)</p>
+        </div>
+
+        <!-- 간염 -->
+        <div>
+            <p class="font-bold text-brand-dark">간염</p>
+            <p>B형간염 항원(HBsAg), B형간염 항체(Anti-HBs), C형간염 항체(Anti-HCV), A형간염 항체(HAV Ab IgG)</p>
+        </div>
+
+        <!-- 신장질환 -->
+        <div>
+            <p class="font-bold text-brand-dark">신장질환</p>
+            <p>BUN, Creatinine</p>
+        </div>
+
+        <!-- 대사질환 -->
+        <div>
+            <p class="font-bold text-brand-dark">대사질환</p>
+            <p>혈당(Glucose)</p>
+        </div>
+
+        <!-- 혈액질환 -->
+        <div>
+            <p class="font-bold text-brand-dark">혈액질환</p>
+            <p>
+                백혈구(WBC), 적혈구(RBC), 혈색소(Hemoglobin), 적혈구용적률(Hematocrit), MCV, MCH, MCHC, 혈소판(Platelet)
+            </p>
+
+        </div>
+
+        <!-- 혈액형 -->
+        <div>
+            <p class="font-bold text-brand-dark">혈액형</p>
+            <p>ABO 혈액형, Rh 혈액형</p>
+        </div>
+
+        <!-- 심혈관 -->
+        <div>
+            <p class="font-bold text-brand-dark">심혈관</p>
+            <p>총콜레스테롤(Cholesterol, total), 중성지방(Triglyceride), HDL-콜레스테롤(HDL-cholesterol)</p>
+        </div>
+
+        <!-- 성병질환 -->
+        <div>
+            <p class="font-bold text-brand-dark">성병질환</p>
+            <p>매독검사(RPR), HIV Ag/Ab</p>
+        </div>
+
+        <!-- 갑상선 질환 -->
+        <div>
+            <p class="font-bold text-brand-dark">갑상선 질환</p>
+            <p>TSH, Free T4</p>
+        </div>
+
+        <!-- 소변검사 -->
+        <div>
+            <p class="font-bold text-brand-dark">소변검사</p>
+            <p>
+소변검사(Urine 10), pH, Nitrite, 비중(S.G), 단백질(Protein), 요당(Glucose), 케톤(Ketone), 빌리루빈(Bilirubin), 잠혈(Occult Blood), 유로빌리노겐(Urobilinogen), 백혈구 에스터라제(Leukocyte esterase)
+            </p>
+            <p class="mt-1">
+                Microscopic (Flow Cytometry), RBC, WBC, E.P cells,
+                Casts, Bacteria, Crystals, Others
             </p>
         </div>
 
-        <div>
+    </div>
+</div>            </p>
+
             <span class="font-bold text-brand-dark text-base">
 </br><i class="fa-solid fa-briefcase-medical"></i>&nbsp;&nbsp;초음파</span>
             <p class="text-base text-gray-800 leading-relaxed mt-0.5">
@@ -1106,6 +1728,21 @@
         </div>
     </div>
 
+
+<script>
+function openCheckupRoute() {
+    const modal = document.getElementById('checkupRouteModal');
+    modal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+}
+
+function closeCheckupRoute() {
+    const modal = document.getElementById('checkupRouteModal');
+    modal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+}
+</script>
+
     <script>
         // 페이지 전환 함수 (선택된 탭에 주황색 배경 적용)
         function showPage(pageId) {
@@ -1160,5 +1797,16 @@
             document.getElementById('bloodModal').classList.add('hidden');
         }
     </script>
+
+<script>
+function toggleBloodTest(id, button) {
+    const detail = document.getElementById(id);
+    const icon = button.querySelector('.fa-chevron-down');
+
+    detail.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+}
+</script>
+
 </body>
 </html>
