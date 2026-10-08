@@ -207,7 +207,7 @@
         <span class="font-bold text-blue-600">남 24세(02년생), </span>
         <span class="font-bold text-pink-600">여 40세(86년생)</span>부터 4년마다</li>
                             <li><strong class="text-gray-900">B형간염:</strong> 만 40세 
-<span class="text-sm text-gray-600">(86년생)</span> </li>
+<span class="text-sm text-gray-600">(86년생-보균자 및 면역자는 제외)</span> </li>
                             <li><strong class="text-gray-900">C형간염:</strong> 만 56세 
 <span class="text-sm text-gray-600">(70년생)</span> </li>
                             <li><strong class="text-gray-900">폐기능:</strong> 만 56세, 66세 
@@ -1372,112 +1372,119 @@
             </div>
         </section>
 
-        <!-- 5. 의료진 스케줄 페이지 -->
-        <section id="page-schedule" class="page-content hidden space-y-6">
-            <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm space-y-5">
-                <div class="border-b border-gray-100 pb-3">
-                    <h2 class="text-lg font-bold text-brand-dark">의료진 진료 스케줄</h2>
-                    <p class="text-sm text-gray-600 mt-0.5">원활한 진료를 위해 진료 시간을 확인해 주세요.</p>
+<!-- 5. 의료진 스케줄 페이지 -->
+<section id="page-schedule" class="page-content hidden space-y-6">
+    <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm space-y-5">
+        <div class="border-b border-gray-100 pb-3">
+            <h2 class="text-lg font-bold text-brand-dark">의료진 진료 스케줄</h2>
+            <p class="text-sm text-gray-600 mt-0.5">원활한 진료를 위해 진료 시간을 확인해 주세요.</p>
+        </div>
+
+        <!-- 1내과 공윤호 과장 -->
+        <div class="relative pt-12 space-y-2">
+            <!-- 의료진 이미지 (z-0으로 뒤로 배치) -->
+            <img src="1.jpg" alt="1내과 공윤호 과장님" class="absolute right-2 top-0 w-28 sm:w-32 h-auto z-0 pointer-events-none" />
+
+            <!-- 이름 영역 (relative z-10으로 이미지보다 앞으로 배치) -->
+  <div class="relative z-10 flex items-center justify-between bg-orange-50 p-3 rounded-xl border border-orange-200 w-60">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-brand-orange text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                    <span class="font-bold text-brand-dark text-base">1내과 공윤호 과장님</span>
                 </div>
-
-                <!-- 1내과 공윤호 과장 -->
-                <div class="space-y-2">
-                    <div class="flex items-center justify-between bg-orange-50 p-3 rounded-xl border border-orange-200">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-brand-orange text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
-                            <span class="font-bold text-brand-dark text-base">1내과 공윤호 과장님
-</span>
-                        </div>
-                    </div>
-                    
-                    <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-                        <table class="w-full text-center text-sm">
-                            <thead class="bg-brand-gray text-white font-semibold">
-                                <tr>
-                                    <th class="py-2.5 border-r border-gray-600">구분</th>
-                                    <th class="py-2.5">월</th>
-                                    <th class="py-2.5">화</th>
-                                    <th class="py-2.5">수</th>
-                                    <th class="py-2.5">목</th>
-                                    <th class="py-2.5">금</th>
-                                    <th class="py-2.5">토</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 text-gray-800 bg-white">
-                                <tr>
-                                    <td class="py-3 font-bold bg-gray-50 text-brand-dark border-r border-gray-200">오전</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 font-bold bg-gray-50 text-brand-dark border-r border-gray-200">오후</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 font-bold text-brand-orange">휴진</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 font-bold text-brand-orange">휴진</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-400 font-medium">-</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- 2내과 주현식 과장 -->
-                <div class="space-y-2 pt-2">
-                    <div class="flex items-center justify-between bg-orange-50 p-3 rounded-xl border border-orange-200">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-brand-orange text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
-                            <span class="font-bold text-brand-dark text-base">2내과 주현식 과장님</span>
-                        </div>
-                    </div>
-
-                    <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-                        <table class="w-full text-center text-sm">
-                            <thead class="bg-brand-gray text-white font-semibold">
-                                <tr>
-                                    <th class="py-2.5 border-r border-gray-600">구분</th>
-                                    <th class="py-2.5">월</th>
-                                    <th class="py-2.5">화</th>
-                                    <th class="py-2.5">수</th>
-                                    <th class="py-2.5">목</th>
-                                    <th class="py-2.5">금</th>
-                                    <th class="py-2.5">토</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 text-gray-800 bg-white">
-                                <tr>
-                                    <td class="py-3 font-bold bg-gray-50 text-brand-dark border-r border-gray-200">오전</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 font-bold bg-gray-50 text-brand-dark border-r border-gray-200">오후</td>
-                                    <td class="py-3 font-bold text-brand-orange">휴진</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 font-bold text-brand-orange">휴진</td>
-                                    <td class="py-3 text-gray-600 font-medium">진료</td>
-                                    <td class="py-3 font-bold text-brand-orange">휴진</td>
-                                    <td class="py-3 text-gray-400 font-medium">-</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <p class="text-xs text-brand-orange font-bold p-3 bg-gray-100 rounded-lg">
-                    ※ 사정에 따라 스케줄이 변동될 수 있으니 내원 전 전화 확인 부탁드립니다.
-                </p>
             </div>
-        </section>
+            
+            <!-- 시간표 영역 (relative z-10으로 이미지보다 앞으로 배치) -->
+            <div class="relative z-10 overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                <table class="w-full text-center text-sm">
+                    <thead class="bg-brand-gray text-white font-semibold">
+                        <tr>
+                            <th class="py-2.5 border-r border-gray-600">구분</th>
+                            <th class="py-2.5">월</th>
+                            <th class="py-2.5">화</th>
+                            <th class="py-2.5">수</th>
+                            <th class="py-2.5">목</th>
+                            <th class="py-2.5">금</th>
+                            <th class="py-2.5">토</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 text-gray-800 bg-white">
+                        <tr>
+                            <td class="py-3 font-bold bg-gray-50 text-brand-dark border-r border-gray-200">오전</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 font-bold bg-gray-50 text-brand-dark border-r border-gray-200">오후</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 font-bold text-brand-orange">휴진</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 font-bold text-brand-orange">휴진</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-400 font-medium">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 2내과 주현식 과장 -->
+        <div class="relative pt-12 space-y-2">
+            <!-- 의료진 이미지 (z-0으로 뒤로 배치) -->
+            <img src="2.jpg" alt="2내과 주현식 과장님" class="absolute right-2 top-0 w-28 sm:w-32 h-auto z-0 pointer-events-none" />
+
+            <!-- 이름 영역 (relative z-10으로 이미지보다 앞으로 배치) -->
+<div class="relative z-10 flex items-center justify-between bg-orange-50 p-3 rounded-xl border border-orange-200 w-60">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-brand-orange text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                    <span class="font-bold text-brand-dark text-base">2내과 주현식 과장님</span>
+                </div>
+            </div>
+
+            <!-- 시간표 영역 (relative z-10으로 이미지보다 앞으로 배치) -->
+            <div class="relative z-10 overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                <table class="w-full text-center text-sm">
+                    <thead class="bg-brand-gray text-white font-semibold">
+                        <tr>
+                            <th class="py-2.5 border-r border-gray-600">구분</th>
+                            <th class="py-2.5">월</th>
+                            <th class="py-2.5">화</th>
+                            <th class="py-2.5">수</th>
+                            <th class="py-2.5">목</th>
+                            <th class="py-2.5">금</th>
+                            <th class="py-2.5">토</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 text-gray-800 bg-white">
+                        <tr>
+                            <td class="py-3 font-bold bg-gray-50 text-brand-dark border-r border-gray-200">오전</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 font-bold bg-gray-50 text-brand-dark border-r border-gray-200">오후</td>
+                            <td class="py-3 font-bold text-brand-orange">휴진</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 font-bold text-brand-orange">휴진</td>
+                            <td class="py-3 text-gray-600 font-medium">진료</td>
+                            <td class="py-3 font-bold text-brand-orange">휴진</td>
+                            <td class="py-3 text-gray-400 font-medium">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
     </main>
 
