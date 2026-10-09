@@ -942,10 +942,13 @@
                 <span class="text-brand-green text-sm font-semibold">(수면)</span> 
             </p>
         </div>
+<!-- 첫 번째 버튼 -->
 <a href="tel:031-631-9145"
-                           class="bg-brand-orange hover:bg-orange-600 text-white text-base font-semibold px-3 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
-                            <i class="fa-solid fa-phone"></i> 종합검진 예약 전화 하기 
-                        </a>
+   onclick="return checkBusinessHours();"
+   class="bg-brand-orange hover:bg-orange-600 text-white text-base font-semibold px-3 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
+    <i class="fa-solid fa-phone"></i> 종합검진 예약 전화 하기 
+</a>
+
     </div>
 
 
@@ -1921,11 +1924,14 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col gap-1.5 shrink-0">
-                        <a href="tel:031-631-9145"
-                           class="bg-brand-orange hover:bg-orange-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
-                            <i class="fa-solid fa-phone"></i> 전화걸기
-                        </a>
+                <div class="flex flex-col gap-1.5 shrink-0">
+    <a href="tel:031-631-9145"
+       onclick="return checkBusinessHours();"
+       class="bg-brand-orange hover:bg-orange-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
+        <i class="fa-solid fa-phone"></i> 전화걸기
+    </a>
+</div>
+
 
                         <a href="sms:010-4232-8058?body=안녕하세요.%20양정분%20검진센터%20문의드립니다."
                            class="bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg">
@@ -2185,6 +2191,91 @@ function toggleBloodTest(id, button) {
     detail.classList.toggle('hidden');
     icon.classList.toggle('rotate-180');
 }
+</script>
+<script>
+  // 공휴일 목록 (2026년 남은 공휴일 + 2027년 전체 공휴일 및 대체공휴일)
+  const holidays = [
+    // 2026년 남은 공휴일
+    "2026-12-25", // 성탄절
+
+    // 2027년 공휴일 및 대체공휴일
+    "2027-01-01", // 신정
+    "2027-02-06", "2027-02-07", "2027-02-08", "2027-02-09", // 설날 연휴 및 대체공휴일
+    "2027-03-01", // 삼일절
+    "2027-05-05", // 어린이날
+    "2027-05-13", // 부처님오신날
+    "2027-06-06", // 현충일
+    "2027-08-15", "2027-08-16", // 광복절 및 대체공휴일
+    "2027-09-14", "2027-09-15", "2027-09-16", // 추석 연휴
+    "2027-10-03", "2027-10-04", // 개천절 및 대체공휴일
+    "2027-10-09", "2027-10-11", // 한글날 및 대체공휴일
+    "2027-12-25", "2027-12-27"  // 성탄절 및 대체공휴일
+  ];
+
+  function checkBusinessHours() {
+    const now = new Date();
+    
+    // YYYY-MM-DD 형식 포맷팅
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const todayStr = `${year}-${month}-${day}`;
+
+    const dayOfWeek = now.getDay(); // 0: 일, 1: 월 ... 6: 토
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    // 현재 시간을 분 단위로 환산 (예: 07:30 -> 7 * 60 + 30 = 450분)
+    const currentTimeInMinutes = hours * 60 + minutes;
+
+    // 07:30 = 450분 / 14:00 = 840분 / 18:00 = 1080분
+    const startTimeInMinutes = 7 * 60 + 30; // 07:30
+    const weekdayEndTimeInMinutes = 18 * 60; // 18:00
+    const saturdayEndTimeInMinutes = 14 * 60; // 14:00
+
+    const isHoliday = holidays.includes(todayStr);
+    const isSunday = (dayOfWeek === 0);
+    const isSaturday = (dayOfWeek === 6);
+
+    let isOffHours = false;
+    let businessHoursText = "";
+
+    // 영업시간 판단
+    if (isSunday) {
+      // 일요일 휴무
+      isOffHours = true;
+    } else if (isSaturday) {
+      // 토요일: 07:30 ~ 14:00 외 시간
+      businessHoursText = "토요일 07:30 ~ 14:00";
+      if (currentTimeInMinutes < startTimeInMinutes || currentTimeInMinutes >= saturdayEndTimeInMinutes) {
+        isOffHours = true;
+      }
+    } else {
+      // 평일(월~금): 07:30 ~ 18:00 외 시간
+      businessHoursText = "평일 07:30 ~ 18:00";
+      if (currentTimeInMinutes < startTimeInMinutes || currentTimeInMinutes >= weekdayEndTimeInMinutes) {
+        isOffHours = true;
+      }
+    }
+
+    // 팝업 메시지 출력 처리
+    if (isHoliday || isSunday || isOffHours) {
+      let reason = "현재는 영업시간이 아닙니다.";
+
+      if (isHoliday) {
+        reason = "오늘은 공휴일로 종합검진 예약 센터 휴무일입니다.";
+      } else if (isSunday) {
+        reason = "일요일은 종합검진 예약 센터 휴무일입니다.";
+      } else if (isOffHours) {
+        reason = `현재 시간은 영업시간이 아닙니다.\n(운영시간: ${businessHoursText})`;
+      }
+
+      alert(`${reason}\n\n영업시간 내에 다시 연락해 주시기 바랍니다.`);
+      return false; // 전화 연결 차단
+    }
+
+    return true; // 전화 연결 진행
+  }
 </script>
 
 </body>
