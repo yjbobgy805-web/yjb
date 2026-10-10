@@ -991,12 +991,25 @@
                 혈압, 청력, 시력, 체성분(인바디), 흉부 X-선 
             </p>
 
+     <span class="font-bold text-brand-dark text-base">
+</br><i class="fa-solid fa-briefcase-medical"></i>&nbsp;&nbsp;초음파</span>
+            <p class="text-base text-gray-800 leading-relaxed mt-0.5">
+                유방, 갑상선, 하복부(자궁·난소)
+            </p>
+
+            <span class="font-bold text-brand-dark text-base">
+</br><i class="fa-solid fa-venus"></i>&nbsp;&nbsp;여성특화검사</span>
+            <p class="text-base text-gray-800 leading-relaxed mt-0.5">
+                자궁암검사, 자궁경부확대촬영, HPV(자궁경부암위험인자)
+            </p>
+
             <span class="font-bold text-brand-dark text-base">
 </br><i class="fa-solid fa-vial"></i>&nbsp;&nbsp;혈액·소변 검사</span>
 <p class="text-base text-gray-800 leading-relaxed mt-0.5">
     간염검사(A, B, C형), 간기능검사, 일반혈액검사, 에이즈ㆍ매독검사, 혈액형검사, 갑상선호르몬검사,
 <span class="text-pink-600 font-bold">풍진검사</span>, 소변검사
 </p>
+
 <!-- 혈액검사 자세히 보기 -->
 <button type="button"
     onclick="toggleBloodTest('brideBloodDetail', this)"
@@ -1008,85 +1021,144 @@
 </button>
 
 <div id="brideBloodDetail" class="hidden mt-2 bg-gray-50 rounded-lg border border-gray-200 p-3">
-    <div class="space-y-2 text-sm text-gray-700">
+    <div class="space-y-3 text-sm text-gray-700">
 
+        <!-- 간기능 -->
         <div>
             <p class="font-bold text-brand-dark">간기능</p>
-            <p>AST (GOT), ALT (GPT), GGT (γ-GTP)</p>
+            <div class="mt-1 space-y-1">
+                <p>ALT (GPT) <span class="text-gray-500">간세포 손상 평가</span></p>
+                <p>AST (GOT) <span class="text-gray-500">급성간염, 심근경색</span></p>
+                <p>GGT (γ-GTP) <span class="text-gray-500">간·담도 건강 확인</span></p>
+            </div>
         </div>
 
+        <!-- 간염 검사 -->
         <div>
-            <p class="font-bold text-brand-dark">간염</p>
-            <p>B형간염 항원(HBsAg), B형간염 항체(Anti-HBs), C형간염 항체(Anti-HCV), A형간염 항체(HAV Ab IgG)</p>
+            <p class="font-bold text-brand-dark">간염 검사</p>
+            <div class="mt-1 space-y-1">
+                <p>HAV Ab IgG <span class="text-gray-500">A형간염 감염 여부</span></p>
+                <p>HBs Ag <span class="text-gray-500">B형간염 감염 여부</span></p>
+                <p>HBs Ab <span class="text-gray-500">B형간염 항체 여부</span></p>
+                <p>Anti-HCV <span class="text-gray-500">C형간염 감염 여부</span></p>
+            </div>
         </div>
 
+        <!-- 신장 질환 검사 -->
         <div>
-            <p class="font-bold text-brand-dark">신장질환</p>
-            <p>BUN, Creatinine</p>
+            <p class="font-bold text-brand-dark">신장 질환 검사</p>
+            <div class="mt-1 space-y-1">
+                <p>BUN <span class="text-gray-500">신부전, 신장기능장애</span></p>
+                <p>Creatinine <span class="text-gray-500">신부전, 신장기능장애</span></p>
+            </div>
         </div>
 
+        <!-- 내분비 -->
         <div>
-            <p class="font-bold text-brand-dark">대사질환</p>
-            <p>혈당(Glucose)</p>
+            <p class="font-bold text-brand-dark">내분비</p>
+            <div class="mt-1 space-y-1">
+                <p>Glucose <span class="text-gray-500">당뇨 관련 질환</span></p>
+            </div>
         </div>
 
+        <!-- 혈액질환검사 -->
         <div>
-            <p class="font-bold text-brand-dark">혈액질환</p>
-            <p>백혈구(WBC), 적혈구(RBC), 혈색소(Hemoglobin), 적혈구용적률(Hematocrit), MCV, MCH, MCHC, 혈소판(Platelet)</p>
+            <p class="font-bold text-brand-dark">혈액질환검사</p>
+            <div class="mt-1 space-y-1">
+                <p>Hb (Hemoglobin) <span class="text-gray-500">혈액 산소 운반 단백질</span></p>
+                <p>Hct (Hematocrit) <span class="text-gray-500">혈액 내 적혈구 비율</span></p>
+                <p>RBC <span class="text-gray-500">적혈구 수치</span></p>
+                <p>Platelet <span class="text-gray-500">혈소판 수</span></p>
+                <p>WBC <span class="text-gray-500">백혈구 수치</span></p>
+                <p>MCV <span class="text-gray-500">평균적혈구용적</span></p>
+                <p>MCH <span class="text-gray-500">평균적혈구혈색소량</span></p>
+                <p>MCHC <span class="text-gray-500">평균적혈구혈색소농도</span></p>
+            </div>
         </div>
 
+        <!-- 혈액형 검사 -->
         <div>
-            <p class="font-bold text-brand-dark">혈액형</p>
-            <p>ABO 혈액형, Rh 혈액형</p>
-        </div>
-    <div>
-            <p class="font-bold text-brand-dark">심혈관</p>
-            <p>총콜레스테롤(Cholesterol, total), 중성지방(Triglyceride), HDL-콜레스테롤(HDL-cholesterol)</p>
+            <p class="font-bold text-brand-dark">혈액형 검사</p>
+            <div class="mt-1 space-y-1">
+                <p>ABO <span class="text-gray-500">ABO 혈액형검사</span></p>
+                <p>Rh <span class="text-gray-500">Rh형 검사</span></p>
+            </div>
         </div>
 
+        <!-- 심혈관 질환 -->
+        <div>
+            <p class="font-bold text-brand-dark">심혈관 질환</p>
+            <div class="mt-1 space-y-1">
+                <p>Total Cholesterol <span class="text-gray-500">콜레스테롤 총량</span></p>
+                <p>Triglyceride (TG) <span class="text-gray-500">중성지방</span></p>
+                <p>HDL-Cholesterol <span class="text-gray-500">좋은 콜레스테롤</span></p>
+            </div>
+        </div>
+
+        <!-- 성병질환 -->
         <div>
             <p class="font-bold text-brand-dark">성병질환</p>
-            <p>매독검사(RPR), HIV Ag/Ab</p>
+            <div class="mt-1 space-y-1">
+                <p>RPR <span class="text-gray-500">매독검사</span></p>
+                <p>HIV Ag/Ab <span class="text-gray-500">인간면역결핍바이러스(HIV) 항원 및 항체 검사</span></p>
+            </div>
         </div>
 
+        <!-- 갑상선 질환 -->
         <div>
             <p class="font-bold text-brand-dark">갑상선 질환</p>
-            <p>TSH, Free T4</p>
+            <div class="mt-1 space-y-1">
+                <p>Free T4 <span class="text-gray-500">갑상선 기능 저하·항진 평가</span></p>
+                <p>TSH <span class="text-gray-500">갑상선 기능 저하·항진 평가</span></p>
+            </div>
         </div>
 
+        <!-- 풍진 -->
         <div>
             <p class="font-bold text-pink-600">풍진</p>
-            <p class="text-pink-600">풍진항체(Rubella virus IgG), 풍진항체(Rubella virus IgM)</p>
+            <div class="mt-1 space-y-1">
+                <p class="text-pink-600">풍진항체 (Rubella virus IgG)</p>
+                <p class="text-gray-500">과거 감염 또는 백신 접종에 의한 면역 여부</p>
+                <p class="text-pink-600">풍진항체 (Rubella virus IgM)</p>
+                <p class="text-gray-500">최근 풍진 감염 여부 평가</p>
+            </div>
         </div>
 
+        <!-- 소변검사 -->
         <div>
             <p class="font-bold text-brand-dark">소변검사</p>
-            <p>
-소변검사(Urine 10), pH, Nitrite, 비중(S.G), 단백질(Protein), 요당(Glucose), 케톤(Ketone), 빌리루빈(Bilirubin), 잠혈(Occult Blood), 유로빌리노겐(Urobilinogen), 백혈구 에스터라제(Leukocyte esterase)
-            </p>
-            <p class="mt-1">
-                Microscopic (Flow Cytometry), RBC, WBC, E.P cells,
-                Casts, Bacteria, Crystals, Others
-            </p>
-                 </div>
+            <div class="mt-1 space-y-1">
+                <p>pH <span class="text-gray-500">소변 산도</span></p>
+                <p>Nitrite <span class="text-gray-500">요로 감염 확인</span></p>
+                <p>Specific Gravity <span class="text-gray-500">소변 농도 확인</span></p>
+                <p>Protein <span class="text-gray-500">소변 단백질 확인</span></p>
+                <p>Glucose <span class="text-gray-500">소변 당 확인</span></p>
+                <p>Ketone <span class="text-gray-500">케톤체 확인</span></p>
+                <p>Bilirubin <span class="text-gray-500">소변 빌리루빈 확인</span></p>
+                <p>Occult Blood <span class="text-gray-500">잠혈 확인</span></p>
+                <p>Urobilinogen <span class="text-gray-500">간 기능 평가</span></p>
+                <p>Leukocyte esterase <span class="text-gray-500">요로 감염 평가</span></p>
+            </div>
+        </div>
+
+        <!-- 요침사 -->
+        <div>
+            <p class="font-bold text-brand-dark">요침사 (Flow Cytometry)</p>
+            <div class="mt-1 space-y-1">
+                <p>RBC <span class="text-gray-500">적혈구 관찰</span></p>
+                <p>WBC <span class="text-gray-500">백혈구 관찰</span></p>
+                <p>E.P cells <span class="text-gray-500">상피세포 관찰</span></p>
+                <p>Casts <span class="text-gray-500">원주체 관찰</span></p>
+                <p>Bacteria <span class="text-gray-500">세균 존재 확인</span></p>
+                <p>Crystals <span class="text-gray-500">결정체 관찰</span></p>
+                <p>Others <span class="text-gray-500">기타 성분 확인</span></p>
+            </div>
+        </div>
 
     </div>
 </div>
 
-
-
-
-            <span class="font-bold text-brand-dark text-base">
-</br><i class="fa-solid fa-briefcase-medical"></i>&nbsp;&nbsp;초음파</span>
-            <p class="text-base text-gray-800 leading-relaxed mt-0.5">
-                유방, 갑상선, 하복부(자궁·난소)
-            </p>
-
-            <span class="font-bold text-brand-dark text-base">
-</br><i class="fa-solid fa-venus"></i>&nbsp;&nbsp;여성특화검사</span>
-            <p class="text-base text-gray-800 leading-relaxed mt-0.5">
-                자궁암검사, 자궁경부확대촬영, HPV(자궁경부암위험인자)
-            </p>
+       
         </div>
     </div>
 
@@ -1107,10 +1179,18 @@
                 기초체성분검사, 흉부촬영
             </p>
 
+
+   <span class="font-bold text-brand-dark text-base">
+</br><i class="fa-solid fa-briefcase-medical"></i>&nbsp;&nbsp;초음파</span>
+            <p class="text-base text-gray-800 leading-relaxed mt-0.5">
+                상복부, 전립선, 갑상선
+            </p>
+
             <span class="font-bold text-brand-dark text-base">
 </br><i class="fa-solid fa-vial"></i>&nbsp;&nbsp;혈액·소변 검사</span>
             <p class="text-base text-gray-800 leading-relaxed mt-0.5">
                 간염검사(A, B, C형), 간기능검사, 일반혈액검사, 에이즈ㆍ매독검사, 혈액형검사, 갑상선호르몬검사, 소변검사
+
 <!-- 혈액검사 자세히 보기 -->
 <button type="button"
     onclick="toggleBloodTest('groomBloodDetail', this)"
@@ -1120,86 +1200,136 @@
     </span>
     <i class="fa-solid fa-chevron-down text-xs transition-transform"></i>
 </button>
+
 <div id="groomBloodDetail" class="hidden mt-2 bg-gray-50 rounded-lg border border-gray-200 p-3">
-    <div class="space-y-2 text-sm text-gray-700">
+    <div class="space-y-3 text-sm text-gray-700">
 
         <!-- 간기능 -->
         <div>
             <p class="font-bold text-brand-dark">간기능</p>
-            <p>AST (GOT), ALT (GPT), GGT (γ-GTP)</p>
+            <div class="mt-1 space-y-1">
+                <p>ALT (GPT) <span class="text-gray-500">간세포 손상 평가</span></p>
+                <p>AST (GOT) <span class="text-gray-500">급성간염, 심근경색</span></p>
+                <p>GGT (γ-GTP) <span class="text-gray-500">간·담도 건강 확인</span></p>
+            </div>
         </div>
 
-        <!-- 간염 -->
+        <!-- 간염 검사 -->
         <div>
-            <p class="font-bold text-brand-dark">간염</p>
-            <p>B형간염 항원(HBsAg), B형간염 항체(Anti-HBs), C형간염 항체(Anti-HCV), A형간염 항체(HAV Ab IgG)</p>
+            <p class="font-bold text-brand-dark">간염 검사</p>
+            <div class="mt-1 space-y-1">
+                <p>HAV Ab IgG <span class="text-gray-500">A형간염 감염 여부</span></p>
+                <p>HBs Ag <span class="text-gray-500">B형간염 감염 여부</span></p>
+                <p>HBs Ab <span class="text-gray-500">B형간염 항체 여부</span></p>
+                <p>Anti-HCV <span class="text-gray-500">C형간염 감염 여부</span></p>
+            </div>
         </div>
 
-        <!-- 신장질환 -->
+        <!-- 신장 질환 검사 -->
         <div>
-            <p class="font-bold text-brand-dark">신장질환</p>
-            <p>BUN, Creatinine</p>
+            <p class="font-bold text-brand-dark">신장 질환 검사</p>
+            <div class="mt-1 space-y-1">
+                <p>BUN <span class="text-gray-500">신부전, 신장기능장애</span></p>
+                <p>Creatinine <span class="text-gray-500">신부전, 신장기능장애</span></p>
+            </div>
         </div>
 
-        <!-- 대사질환 -->
+        <!-- 내분비 -->
         <div>
-            <p class="font-bold text-brand-dark">대사질환</p>
-            <p>혈당(Glucose)</p>
+            <p class="font-bold text-brand-dark">내분비</p>
+            <div class="mt-1 space-y-1">
+                <p>Glucose <span class="text-gray-500">당뇨 관련 질환</span></p>
+            </div>
         </div>
 
-        <!-- 혈액질환 -->
+        <!-- 혈액질환검사 -->
         <div>
-            <p class="font-bold text-brand-dark">혈액질환</p>
-            <p>
-                백혈구(WBC), 적혈구(RBC), 혈색소(Hemoglobin), 적혈구용적률(Hematocrit), MCV, MCH, MCHC, 혈소판(Platelet)
-            </p>
-
+            <p class="font-bold text-brand-dark">혈액질환검사</p>
+            <div class="mt-1 space-y-1">
+                <p>Hb (Hemoglobin) <span class="text-gray-500">혈액 산소 운반 단백질</span></p>
+                <p>Hct (Hematocrit) <span class="text-gray-500">혈액 내 적혈구 비율</span></p>
+                <p>RBC <span class="text-gray-500">적혈구 수치</span></p>
+                <p>Platelet <span class="text-gray-500">혈소판 수</span></p>
+                <p>WBC <span class="text-gray-500">백혈구 수치</span></p>
+                <p>MCV <span class="text-gray-500">평균적혈구용적</span></p>
+                <p>MCH <span class="text-gray-500">평균적혈구혈색소량</span></p>
+                <p>MCHC <span class="text-gray-500">평균적혈구혈색소농도</span></p>
+            </div>
         </div>
 
-        <!-- 혈액형 -->
+        <!-- 혈액형 검사 -->
         <div>
-            <p class="font-bold text-brand-dark">혈액형</p>
-            <p>ABO 혈액형, Rh 혈액형</p>
+            <p class="font-bold text-brand-dark">혈액형 검사</p>
+            <div class="mt-1 space-y-1">
+                <p>ABO <span class="text-gray-500">ABO 혈액형검사</span></p>
+                <p>Rh <span class="text-gray-500">Rh형 검사</span></p>
+            </div>
         </div>
 
-        <!-- 심혈관 -->
+        <!-- 심혈관 질환 -->
         <div>
-            <p class="font-bold text-brand-dark">심혈관</p>
-            <p>총콜레스테롤(Cholesterol, total), 중성지방(Triglyceride), HDL-콜레스테롤(HDL-cholesterol)</p>
+            <p class="font-bold text-brand-dark">심혈관 질환</p>
+            <div class="mt-1 space-y-1">
+                <p>Total Cholesterol <span class="text-gray-500">콜레스테롤 총량</span></p>
+                <p>Triglyceride (TG) <span class="text-gray-500">중성지방</span></p>
+                <p>HDL-Cholesterol <span class="text-gray-500">좋은 콜레스테롤</span></p>
+            </div>
         </div>
 
         <!-- 성병질환 -->
         <div>
             <p class="font-bold text-brand-dark">성병질환</p>
-            <p>매독검사(RPR), HIV Ag/Ab</p>
+            <div class="mt-1 space-y-1">
+                <p>RPR <span class="text-gray-500">매독검사</span></p>
+                <p>HIV Ag/Ab <span class="text-gray-500">인간면역결핍바이러스(HIV) 항원 및 항체 검사</span></p>
+            </div>
         </div>
 
         <!-- 갑상선 질환 -->
         <div>
             <p class="font-bold text-brand-dark">갑상선 질환</p>
-            <p>TSH, Free T4</p>
+            <div class="mt-1 space-y-1">
+                <p>Free T4 <span class="text-gray-500">갑상선 기능 저하·항진 평가</span></p>
+                <p>TSH <span class="text-gray-500">갑상선 기능 저하·항진 평가</span></p>
+            </div>
         </div>
 
         <!-- 소변검사 -->
         <div>
             <p class="font-bold text-brand-dark">소변검사</p>
-            <p>
-소변검사(Urine 10), pH, Nitrite, 비중(S.G), 단백질(Protein), 요당(Glucose), 케톤(Ketone), 빌리루빈(Bilirubin), 잠혈(Occult Blood), 유로빌리노겐(Urobilinogen), 백혈구 에스터라제(Leukocyte esterase)
-            </p>
-            <p class="mt-1">
-                Microscopic (Flow Cytometry), RBC, WBC, E.P cells,
-                Casts, Bacteria, Crystals, Others
-            </p>
+            <div class="mt-1 space-y-1">
+                <p>pH <span class="text-gray-500">소변 산도</span></p>
+                <p>Nitrite <span class="text-gray-500">요로 감염 확인</span></p>
+                <p>Specific Gravity <span class="text-gray-500">소변 농도 확인</span></p>
+                <p>Protein <span class="text-gray-500">소변 단백질 확인</span></p>
+                <p>Glucose <span class="text-gray-500">소변 당 확인</span></p>
+                <p>Ketone <span class="text-gray-500">케톤체 확인</span></p>
+                <p>Bilirubin <span class="text-gray-500">소변 빌리루빈 확인</span></p>
+                <p>Occult Blood <span class="text-gray-500">잠혈 확인</span></p>
+                <p>Urobilinogen <span class="text-gray-500">간 기능 평가</span></p>
+                <p>Leukocyte esterase <span class="text-gray-500">요로 감염 평가</span></p>
+            </div>
+        </div>
+
+        <!-- 요침사 -->
+        <div>
+            <p class="font-bold text-brand-dark">요침사 (Flow Cytometry)</p>
+            <div class="mt-1 space-y-1">
+                <p>RBC <span class="text-gray-500">적혈구 관찰</span></p>
+                <p>WBC <span class="text-gray-500">백혈구 관찰</span></p>
+                <p>E.P cells <span class="text-gray-500">상피세포 관찰</span></p>
+                <p>Casts <span class="text-gray-500">원주체 관찰</span></p>
+                <p>Bacteria <span class="text-gray-500">세균 존재 확인</span></p>
+                <p>Crystals <span class="text-gray-500">결정체 관찰</span></p>
+                <p>Others <span class="text-gray-500">기타 성분 확인</span></p>
+            </div>
         </div>
 
     </div>
-</div>            </p>
+</div>
+     </p>
 
-            <span class="font-bold text-brand-dark text-base">
-</br><i class="fa-solid fa-briefcase-medical"></i>&nbsp;&nbsp;초음파</span>
-            <p class="text-base text-gray-800 leading-relaxed mt-0.5">
-                상복부, 전립선, 갑상선
-            </p>
+         
         </div>
 
         <div class="bg-orange-50 rounded-xl p-3 border border-orange-200">
