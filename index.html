@@ -2159,38 +2159,6 @@
 
     </div>
 </div>
-<!-- 주소 2 (주차장) -->
-<div class="p-3 bg-gray-50 rounded-xl border border-gray-200 flex items-center justify-between gap-2">
-
-    <div class="flex items-center gap-2 min-w-0">
-        <i class="fa-solid fa-square-parking text-blue-600 text-lg shrink-0"></i>
-        <div class="min-w-0">
-            <span class="font-bold text-brand-dark block text-xs">주차장 주소</span>
-            <span class="text-gray-800 text-sm">경기도 이천시 중리동 464-10</span>
-        </div>
-    </div>
-
-    <!-- 지도 버튼 -->
-    <div class="flex flex-col gap-1.5 shrink-0">
-
-        <!-- 네이버 -->
-        <a href="https://map.naver.com/p/entry/place/19065544?c=17.98,0,0,0,dh&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202610061333%26locale%3Dko%26svcName%3Dmap_pcv5"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="bg-[#03C75A] hover:bg-[#02b351] text-white text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
-            <i class="fa-solid fa-square-parking"></i> 네이버
-        </a>
-
-        <!-- 카카오 -->
-        <a href="https://map.kakao.com/?urlX=599259.9999999979&urlY=1049457.9999999993&urlLevel=3&itemId=1934411102&q=%EC%96%91%EC%A0%95%EB%B6%84%EC%82%B0%EB%B6%80%EC%9D%B8%EA%B3%BC%EC%9D%98%EC%9B%90%20%EC%98%A5%EC%99%B8%EC%A3%BC%EC%B0%A8%EC%9E%A5&srcid=1934411102&map_type=TYPE_MAP"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="bg-[#FEE500] hover:bg-[#ebd300] text-[#191919] text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
-            <i class="fa-solid fa-map-pin"></i> 카카오
-        </a>
-
-    </div>
-</div>
 
 <!-- 전화번호 섹션 --> 
 <div class="p-3 bg-orange-50 rounded-xl border border-orange-200 flex justify-between items-center">
@@ -2220,6 +2188,116 @@
     </div>
 </div>
 
+<!-- 주차장 안내 버튼 -->
+<button type="button" 
+        onclick="openModal('parkingModal')"
+        class="w-full p-3 bg-gray-50 hover:bg-gray-100 rounded-xl border border-gray-200 flex items-center justify-between transition group">
+    <div class="flex items-center gap-2">
+        <i class="fa-solid fa-square-parking text-blue-600 text-lg"></i>
+        <span class="font-bold text-gray-800 text-sm">주차장 주소 안내</span>
+    </div>
+    <span class="text-xs text-blue-600 font-medium group-hover:underline">상세보기 &gt;</span>
+</button>
+
+<!-- 팝업 모달 (기본 숨김 처리) -->
+<div id="parkingModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+    <!-- 모달 컨텐츠 박스 -->
+    <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-xl relative">
+        
+        <!-- 모달 헤더 -->
+        <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-square-parking text-blue-600 text-xl"></i>
+                <h3 class="font-bold text-gray-900 text-base">주차장 주소 안내</h3>
+            </div>
+            <!-- 닫기 버튼 (X) -->
+            <button type="button" onclick="closeModal('parkingModal')" class="text-gray-400 hover:text-gray-600 p-1">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- 주소 목록 -->
+        <div class="mt-4 space-y-3">
+            
+            <!-- 1. 지하주차장 -->
+            <div class="bg-gray-50 p-3 rounded-xl border border-gray-100">
+                <div class="flex items-center justify-between mb-1.5">
+                    <span class="font-bold text-gray-900 text-sm">1. 지하주차장</span>
+                    <button type="button" 
+                            onclick="copyText('경기도 이천시 중리동 이섭대천로 1186')" 
+                            class="px-2.5 py-1 bg-white hover:bg-gray-100 border border-gray-200 text-gray-700 text-xs rounded-lg transition flex items-center gap-1 shadow-sm shrink-0">
+                        <i class="fa-regular fa-copy text-xs"></i> 복사
+                    </button>
+                </div>
+                <p class="text-gray-600 text-xs leading-relaxed">경기도 이천시 중리동 이섭대천로 1186</p>
+            </div>
+
+            <!-- 2. 옥외 주차장 -->
+            <div class="bg-gray-50 p-3 rounded-xl border border-gray-100">
+                <div class="flex items-center justify-between mb-1.5">
+                    <span class="font-bold text-gray-900 text-sm">2. 옥외 주차장</span>
+                    <button type="button" 
+                            onclick="copyText('경기도 이천시 중리동 464-10')" 
+                            class="px-2.5 py-1 bg-white hover:bg-gray-100 border border-gray-200 text-gray-700 text-xs rounded-lg transition flex items-center gap-1 shadow-sm shrink-0">
+                        <i class="fa-regular fa-copy text-xs"></i> 복사
+                    </button>
+                </div>
+                <p class="text-gray-600 text-xs leading-relaxed">경기도 이천시 중리동 464-10</p>
+            </div>
+
+        </div>
+
+        <!-- 닫기 버튼 -->
+        <div class="mt-5">
+            <button type="button" 
+                    onclick="closeModal('parkingModal')" 
+                    class="w-full py-2.5 bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium rounded-xl transition">
+                닫기
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 복사 완료 토스트 메시지 (기본 숨김, 화면 중앙 하단에 표시) -->
+<div id="toastMessage" class="fixed bottom-10 left-1/2 -translate-x-1/2 z-[9999] bg-gray-900/90 text-white text-xs px-4 py-2.5 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none flex items-center gap-1.5">
+    <i class="fa-solid fa-check text-green-400"></i> 주소가 복사되었습니다.
+</div>
+
+<!-- 자바스크립트 (모달 제어 & 토스트 애니메이션) -->
+<script>
+    let toastTimer;
+
+    function openModal(id) {
+        document.getElementById(id).classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).classList.add('hidden');
+    }
+
+    function copyText(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            showToast();
+        });
+    }
+
+    function showToast() {
+        const toast = document.getElementById('toastMessage');
+        
+        // 이미 토스트가 떠 있는 상태에서 연속으로 누를 경우 타이머 초기화
+        clearTimeout(toastTimer);
+
+        // 토스트 보이기
+        toast.classList.remove('opacity-0');
+        toast.classList.add('opacity-100');
+
+        // 1.5초 뒤에 서서히 사라지기
+        toastTimer = setTimeout(() => {
+            toast.classList.remove('opacity-100');
+            toast.classList.add('opacity-0');
+        }, 1500);
+    }
+</script>
 <!-- 모바일/태블릿용 간결한 푸터 -->
 <footer class="text-gray-400 text-[10px] mt-3 text-center">
     <div class="leading-tight">
