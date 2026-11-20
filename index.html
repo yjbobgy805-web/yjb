@@ -2326,10 +2326,10 @@ function toggleBloodTest(id, button) {
                    class="w-full min-w-0 rounded-lg border border-gray-400 px-3 py-2 text-base font-normal">
         </label>
         <div class="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-3">
-            <label class="grid gap-1 text-sm font-semibold">
+            <label class="block min-w-0 text-sm font-semibold">
                 희망 날짜 (선택)
                 <input name="preferredDate" type="date"
-                       class="w-full min-w-0 rounded-lg border border-gray-400 px-3 py-2 text-base font-normal disabled:bg-gray-100">
+                       class="mt-1 block w-full min-w-0 max-w-[11rem] box-border rounded-lg border border-gray-400 px-3 py-2 text-base font-normal disabled:bg-gray-100">
             </label>
             <label class="flex min-h-11 items-center gap-2 whitespace-nowrap text-sm">
                 <input name="decideAfterConsultation" type="checkbox" class="h-4 w-4">
@@ -2369,7 +2369,7 @@ function toggleBloodTest(id, button) {
         const handoff = document.getElementById('screening-sms-handoff');
         const message = document.getElementById('screening-sms-message');
         const status = document.getElementById('screening-sms-status');
-        const recipient = '010-4232-8058';
+        const recipient = '010-5635-4175';
 
         document.getElementById('open-screening-sms').addEventListener('click', () => {
             dialog.showModal();
