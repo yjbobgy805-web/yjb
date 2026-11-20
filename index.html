@@ -2313,16 +2313,22 @@ function toggleBloodTest(id, button) {
         <h2 id="screening-sms-title" class="text-lg font-bold">종합검진 예약 문자</h2>
         <button type="button" id="close-screening-sms" class="rounded px-2 py-1 text-sm text-gray-700">닫기</button>
     </div>
-    <p class="mt-2 text-sm text-gray-600">문자 앱에서 내용을 확인한 뒤 전송해 주세요<br>직원 확인 후 전화 드립니다.</p>
+    <div class="mt-3 flex items-start gap-2.5 rounded-lg border border-orange-200 bg-orange-50 px-3 py-2.5">
+        <i class="fa-solid fa-circle-info mt-0.5 text-orange-700" aria-hidden="true"></i>
+        <p class="text-sm leading-relaxed text-gray-800">
+            문자 앱에서 내용을 확인한 뒤 전송해 주세요.<br>
+            <strong class="text-orange-900">직원이 확인한 후 전화드려요.</strong>
+        </p>
+    </div>
     <form id="screening-sms-form" class="mt-4 grid gap-3">
         <label class="grid gap-1 text-sm font-semibold">
-            이름
+            이름 (필수)
             <input name="patientName" type="text" autocomplete="name" maxlength="50" required
                    class="w-full rounded-lg border border-gray-400 px-3 py-2 text-base font-normal">
         </label>
         <label class="grid gap-1 text-sm font-semibold">
-            생년월일
-            <input name="birthDate" type="text" placeholder="예 19900101" required
+            생년월일 (필수)
+            <input name="birthDate" type="text" placeholder="예 19700101" required
                    class="w-full min-w-0 rounded-lg border border-gray-400 px-3 py-2 text-base font-normal">
         </label>
         <div class="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-3">
@@ -2353,7 +2359,7 @@ function toggleBloodTest(id, button) {
                    aria-label="회사 또는 기관명" aria-describedby="screening-organization-help"
                    class="mt-2 w-full min-w-0 rounded-lg border border-gray-400 px-3 py-2 text-base font-normal">
         </fieldset>
-        <button type="submit" class="rounded-lg bg-green-600 px-4 py-2 font-semibold text-white hover:bg-green-700">SMS 보내기</button>
+        <button type="submit" class="rounded-lg bg-green-600 px-4 py-2 font-semibold text-white hover:bg-green-700">SMS 보내기<span class="block text-sm font-medium">(문자 앱에서 꼭 전송 버튼 눌러주세요.)</span></button>
     </form>
     <p id="screening-sms-handoff" role="status" class="mt-2 text-sm text-gray-600"></p>
     <details id="screening-sms-fallback" hidden class="mt-3 border-t pt-3">
