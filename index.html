@@ -137,32 +137,24 @@
 
 <!-- 고정 하단/서브 바 네비게이션 -->
 <div class="sticky top-[101px] z-30 bg-gray-100 py-2 -mx-4 px-4 overflow-x-auto hide-scrollbar flex gap-2 border-b border-gray-200 shadow-sm">
-    <button onclick="scrollToSection('nat-general')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">일반검진</button>
+    <button onclick="scrollToSection('nat-general')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">일반건강검진</button>
     <button onclick="scrollToSection('nat-cancer')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">암검진</button>
     <button onclick="scrollToSection('nat-notice')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">안내사항</button>
 </div>
 
-<!-- 검진결과 카카오톡 안내 -->
 <div class="bg-orange-50 rounded-xl border border-orange-200 p-3.5 flex items-center gap-3 shadow-sm">
-
-    <img 
-        src="https://cdn.simpleicons.org/kakaotalk/FFCD00"
-        alt="카카오톡"
-        class="w-8 h-8 flex-shrink-0"
-    >
-
-  <div>
-        <p class="text-base font-bold text-gray-900">
-            카카오톡으로 검진결과 받아보세요! 
-        </p>    <p class="text-sm text-gray-600 font-medium mt-0.5">
-
-           카카오톡에서 이메일 전송이 가능합니다. </br>접수 시 신청해 주세요.
-        </p>
-    </div> 
-
-
-
+    <span class="w-8 h-8 flex-shrink-0 grid place-items-center rounded bg-yellow-400 text-yellow-950 text-lg" aria-hidden="true">
+        <i class="fa-solid fa-clipboard-check"></i>
+    </span>
+    <div>
+        <p class="text-base font-bold text-gray-900">국가건강검진 안내</p>
+        <p class="mt-1 text-sm text-gray-700">국민건강보험공단에서 정한 대상자는 일반건강검진과 국가암검진을 받으실 수 있습니다. 올해 받을 수 있는 검진 항목은 아래 <strong>‘올해 내 검진 알아보기’</strong>에서 확인해 주세요. 암검진은 항목과 대상에 따라 본인부담금이 발생할 수 있습니다.</p>
+    </div>
 </div>
+<button type="button" id="open-checkup-guide"
+        class="w-full rounded-xl bg-brand-orange px-4 py-3.5 text-base font-bold text-white shadow-sm hover:bg-orange-600">
+    <i class="fa-solid fa-magnifying-glass mr-1" aria-hidden="true"></i> 올해 내 검진 알아보기
+</button>
 <!-- 검진동선 알아보기 버튼 -->
 <div class="bg-white rounded-2xl p-4 border border-gray-200 shadow-sm">
     <button
@@ -179,7 +171,7 @@
             <!-- 일반검진 -->
             <div id="nat-general" class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm space-y-4">
                 <div class="border-b border-gray-100 pb-3">
-                    <h2 class="text-lg font-bold text-brand-dark">일반검진 안내</h2>
+                    <h2 class="text-lg font-bold text-brand-dark">일반건강검진 안내</h2>
                     <p class="text-sm font-semibold text-brand-orange mt-0.5">20대 이상 성인 2년마다 (비사무직은 매년)</p>
                 </div>
 
@@ -220,11 +212,11 @@
 <span class="text-sm text-gray-600">(86년생-보균자·면역자 제외)</span> </li>
                             <li><strong class="text-gray-900">C형간염:</strong> 56세 
 <span class="text-sm text-gray-600">(70년생)</span> </li>
-                            <li><strong class="text-gray-900">폐기능:</strong> 56·66세 
-<span class="text-sm text-gray-600">(60·70년생)</span> </li>
-                            <li><strong class="text-pink-600">골밀도(여성):</strong> 54·60·66세 
-<span class="text-sm text-gray-600">(60·66·72년생)</span>  </li>
-                            <li><strong class="text-gray-900">정신건강검사(우울증):</strong> 20~34세, 2년마다, * 35~39세(1회), 40~49세(1회), 50~59세(1회), 60~69세(1회), 70~79세(1회)</li>
+                            <li><strong class="text-gray-900">폐기능:</strong> 56세(1970년생)·66세(1960년생) 
+ </li>
+                            <li><strong class="text-pink-600">골밀도(여성):</strong> 54세(1972년생)·60세(1966년생)·66세(1960년생) 
+  </li>
+                            <li><strong class="text-gray-900">정신건강검사(우울증):</strong> 20~34세는 2년마다, 35~39세(1회), 40~49세(1회), 50~59세(1회), 60~69세(1회), 70~79세(1회)</li>
                             <li><strong class="text-gray-900">조기정신증 :</strong> 20~34세, 2년마다 </li>
                             <li><strong class="text-gray-900">생활습관평가 :</strong> 40·50·60·70세 </li>
                                <li><strong class="text-gray-900">노인신체기능검사 :</strong> 66·70·80세</li>             
@@ -282,7 +274,7 @@
     </div>
     <p class="text-base text-gray-800 font-medium">분변잠혈검사</p>
     <p class="text-sm text-gray-500 font-bold mt-1.5"><strong>※ 분변잠혈반응검사란? </strong>대변속의 혈액성분을 확인하는 검사</p>
-    <p class="text-sm text-gray-500 font-bold mt-1.5">※ 이 검사에서 이상이 있어야 대장내시경 지원됨 (수면비 별도)</p>
+    <p class="text-sm text-gray-500 font-bold mt-1.5">※ 이 검사에서 이상이 있어야 대장 내시경 지원됨 (수면비 별도)</p>
 </div>
 
 <!-- 간암 -->
@@ -333,7 +325,7 @@
                 <!-- 비용 안내 박스 -->
                 <div class="p-2 bg-brand-gray text-white rounded-xl space-y-3 mt-2">
                     <div>
-                        <span class="font-bold text-base block text-orange-200 mb-0 border-b border-gray-600 pb-0.5">※ 공단 10% 부담금</span>
+                        <span class="font-bold text-base block text-orange-200 mb-0 border-b border-gray-600 pb-0.5">※ 국가암검진 본인부담금 안내</span>
                         <div class="text-sm text-slate-200 space-y-0.5 font-medium mt-1">
                             <p>• 위 내시경: 9,490원 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   • 위 조직검사: 7,840원</p>
                             <p>• 유방암: 5,280원   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     • 간암: 13,060원</p>
@@ -354,17 +346,17 @@
             </div>
 
 
-            <!-- 검진시 주의사항 -->
+            <!-- 검진 시 주의사항 -->
             <div id="nat-notice" class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm">
                 <div class="flex items-center gap-2 border-b border-gray-100 pb-3 mb-4">
                     <i class="fa-solid fa-circle-exclamation text-brand-orange text-xl"></i>
-                    <h2 class="text-lg font-bold text-brand-dark">&nbsp;2026년 검진시 안내사항</h2>
+                    <h2 class="text-lg font-bold text-brand-dark">&nbsp;2026년 검진 시 안내사항</h2>
                 </div>
                 
                 <div class="space-y-3">
                     <div class="p-2.5 bg-orange-50/70 rounded-xl border border-orange-100 flex items-start gap-3">
                         <i class="fa-solid fa-circle-check text-brand-orange mt-1 text-base"></i>
-                        <p class="text-base text-brand-dark font-bold">올해는 짝수년 출생자들이 대상자 입니다.</p>
+                        <p class="text-base text-brand-dark font-bold">올해는 짝수년 출생자들이 대상자입니다.</p>
                     </div>
 <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
     <!-- 아이콘: FontAwesome 신분증(id-card) 아이콘 -->
@@ -406,23 +398,31 @@
                     <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
                         <i class="fa-solid fa-gem text-brand-orange mt-1 text-base"></i>
                         <div>
-                            <p class="text-base text-gray-800 font-medium">탈의시 목걸이는 빼주세요.</p>
-                            <p class="text-sm text-brand-orange font-medium mt-0.5">※ 분실시 책임지지 않습니다.</p>
+                            <p class="text-base text-gray-800 font-medium">탈의 시 목걸이는 빼 주세요.</p>
+                            <p class="text-sm text-brand-orange font-medium mt-0.5">※ 분실 시 책임지지 않습니다.</p>
                         </div>
                     </div>
 
-                <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
-    <i class="fa-solid fa-shirt text-brand-orange mt-1 text-base"></i>
+                    <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
+                        <i class="fa-solid fa-syringe text-brand-orange mt-1 text-base" aria-hidden="true"></i>
+                        <p class="text-base text-gray-800"><strong>마운자로·위고비 사용 중인 분</strong>은 내시경 검사가 제한될 수 있으므로 내원 전 의료진과 상담해 주세요.</p>
+                    </div>
+
+                <div class="p-2.5 bg-[#FFF5F5] rounded-xl border border-pink-100 flex items-start gap-3">
+    <i class="fa-solid fa-shirt text-pink-700 mt-1 text-base"></i>
     <p class="text-base text-gray-800 font-medium">
-        여성분은 브래지어도 탈의하시고 가운을 입으세요.
-        <span class="block text-sm text-brand-orange font-medium mt-0.5">
-            ※ 스포츠브라, 수유브라도 탈의해주세요.        </span>
+        여성분은 브래지어도 탈의하시고 가운을 입어 주세요.
+        <span class="block text-sm text-pink-700 font-medium mt-0.5">
+            ※ 스포츠브라, 수유브라도 탈의해 주세요.        </span>
     </p>
 </div>
-
-                    <div class="p-2.5 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-3">
-                        <i class="fa-solid fa-person-pregnant text-brand-orange mt-1 text-base"></i>
-                        <p class="text-base text-gray-800 font-medium">생리중, 임신중, 임신가능성이 있으시거나 수유중인 분은 말씀해 주세요.</p>
+                    <div class="p-2.5 bg-[#FFF5F5] rounded-xl border border-pink-100 flex items-start gap-3">
+                        <i class="fa-solid fa-droplet text-pink-700 mt-1 text-base" aria-hidden="true"></i>
+                        <p class="text-base text-gray-800"><strong>생리 중인 경우</strong> 가급적 생리 종료 3~5일 후 내원해 주세요.</p>
+                    </div>
+                    <div class="p-2.5 bg-[#FFF5F5] rounded-xl border border-pink-100 flex items-start gap-3">
+                        <i class="fa-solid fa-person-pregnant text-pink-700 mt-1 text-base" aria-hidden="true"></i>
+                        <p class="text-base text-gray-800"><strong>임신 중·임신 가능성·수유 중인 분</strong>은 안전을 위해 방사선 및 내시경 검사를 진행하지 않습니다. 검사 전 반드시 말씀해 주세요.</p>
                     </div>
 
 <!-- 검진동선 팝업 -->
@@ -652,6 +652,28 @@
 </div>
 
 
+<!-- 검진결과 카카오톡 안내 -->
+<div class="bg-orange-50 rounded-xl border border-orange-200 p-3.5 flex items-center gap-3 shadow-sm">
+
+    <img 
+        src="https://cdn.simpleicons.org/kakaotalk/FFCD00"
+        alt="카카오톡"
+        class="w-8 h-8 flex-shrink-0"
+    >
+
+  <div>
+        <p class="text-base font-bold text-gray-900">
+            카카오톡으로 검진결과 받아보세요! 
+        </p>    <p class="text-sm text-gray-600 font-medium mt-0.5">
+
+           카카오톡에서 이메일 전송이 가능합니다. </br>접수 시 신청해 주세요.
+        </p>
+    </div> 
+
+
+
+</div>
+
         </section>
 
         <!-- 3. 종합검진 안내 페이지 -->
@@ -660,6 +682,15 @@
 <div class="sticky top-[101px] z-30 bg-gray-100 py-2 -mx-4 px-4 overflow-x-auto hide-scrollbar flex gap-2 border-b border-gray-200 shadow-sm">
     <button onclick="scrollToSection('tot-stomach')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">위 종합검진</button>
     <button onclick="scrollToSection('tot-stomachcolon')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">위·대장 종합검진</button>
+</div>
+<div class="bg-orange-50 rounded-xl border border-orange-200 p-3.5 flex items-center gap-3 shadow-sm">
+    <span class="w-8 h-8 flex-shrink-0 grid place-items-center rounded bg-yellow-400 text-yellow-950 text-lg" aria-hidden="true">
+        <i class="fa-solid fa-clipboard-list"></i>
+    </span>
+    <div>
+        <p class="text-base font-bold text-gray-900">종합검진 안내</p>
+        <p class="mt-1 text-sm text-gray-700">위 종합검진과 위·대장 종합검진 중 원하시는 프로그램을 선택하실 수 있습니다. 종합검진은 별도 비용이 있으며, 검사 구성과 비용은 아래에서 확인해 주세요.</p>
+    </div>
 </div>
 <!-- 종합검진 전체 -->
 <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm space-y-4">
@@ -685,7 +716,7 @@
                  <span class="font-bold text-brand-dark text-base">
 </br><i class="fa-solid fa-stethoscope"></i>&nbsp;&nbsp;내시경</span>
                 <p class="text-base text-gray-800 mt-0.5">
-                    위내시경
+                    위 내시경
                     <span class="text-brand-orange font-bold text-sm">(※ 수면비 포함)</br></span>
                 </p>
  
@@ -954,34 +985,38 @@
 
         <div class="p-4 bg-white rounded-xl border border-gray-200 text-center">
             <p class="font-bold text-brand-dark text-lg">
-                위 종합검진 +     <span class="font-bold text-green-600">대장 내시경</span>
+                위 종합검진 +     <i class="fa-solid fa-star text-yellow-500" aria-hidden="true"></i> <span class="font-bold text-green-600 underline decoration-2 underline-offset-2">대장 내시경</span>
                 <span class="text-brand-green text-sm font-semibold">(수면)</span> 
             </p>
         </div>
-<!-- 첫 번째 버튼 -->
-<a href="tel:031-631-9145"
-   onclick="return checkBusinessHours();"
-   class="bg-brand-orange hover:bg-orange-600 text-white text-base font-semibold px-3 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
-    <i class="fa-solid fa-phone"></i> 종합검진 예약 전화 하기 
-</a>
-<p class="text-sm text-gray-600 font-medium mt-2">
-    <strong class="text-gray-700">※ 대장내시경 예약 안내:</strong> 내원 후 전문 의료진과 상담을 거쳐 예약이 진행됩니다.
-</p>
     </div>
 
 
     <!-- 검진 관련 안내 -->
     <div class="p-4 bg-gray-50 rounded-xl border border-gray-200 space-y-2">
+        <p class="font-medium text-base text-gray-800"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>&nbsp;&nbsp;위 종합검진은 예약 가능 · 조건 충족 시 당일 검진 가능</p>
         <p class="font-medium text-base text-gray-800">
-<i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;위 · 대장 종합검진은 예약필수(7일 전), 위 종합검진은 당일가능(금식 후)
+<i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;위 · 대장 종합검진은 내원 후 상담을 거쳐 예약이 진행됩니다.
         </p>
         <p class="font-medium text-base text-gray-800">
-<i class="fa-regular fa-credit-card"></i> &nbsp;&nbsp;내시경 시 헬리코박터검사, 조직검사, 용종절제술시 추가비용 (접수에 문의)
+<i class="fa-regular fa-credit-card"></i> &nbsp;&nbsp;내시경 시 헬리코박터검사, 조직검사, 용종절제술 시 추가 비용 (접수에 문의)
         </p>
   <p class="font-medium text-base text-gray-800">
 <i class="fa-solid fa-square-poll-horizontal"></i>&nbsp;&nbsp;종검 후 결과 상담은 평일 오후 2시~4시 사이 방문   
         </p>
+
      </div>
+        <div class="pt-2">
+<a href="tel:031-631-9145"
+   onclick="return checkBusinessHours();"
+   class="bg-brand-orange hover:bg-orange-600 text-white text-base font-semibold px-3 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
+    <i class="fa-solid fa-phone"></i> 종합검진 예약 전화하기 
+</a>
+<button type="button" id="open-screening-sms"
+        class="mt-2 w-full bg-green-600 hover:bg-green-700 text-white text-base font-semibold px-3 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
+    <i class="fa-solid fa-comment-sms" aria-hidden="true"></i> 종합검진 예약 문자 보내기
+</button>
+        </div>
 
 
    
@@ -1000,6 +1035,16 @@
         <button onclick="scrollToSection('cus-woman')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">여성검진</button>
         <button onclick="scrollToSection('cus-ct')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">CT</button>
         <button onclick="scrollToSection('cus-bone')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">골밀도</button>
+    </div>
+
+    <div class="bg-orange-50 rounded-xl border border-orange-200 p-3.5 flex items-center gap-3 shadow-sm">
+        <span class="w-8 h-8 flex-shrink-0 grid place-items-center rounded bg-yellow-400 text-yellow-950 text-lg" aria-hidden="true">
+            <i class="fa-solid fa-plus"></i>
+        </span>
+        <div>
+            <p class="text-base font-bold text-gray-900">국가건강검진에 더하면 좋은 검진</p>
+            <p class="mt-1 text-sm text-gray-700">원하시는 분만 추가할 수 있는 선택검사이며, 검사별 비용은 아래에 표시되어 있습니다.</p>
+        </div>
     </div>
 
     <!-- 혈액 종합검사 -->
@@ -1505,10 +1550,10 @@
         <!-- 5. 내시경 상세 안내 페이지 (새로 구성된 상단 메뉴 및 이미지 내용 반영) -->
         <section id="page-endoscopy" class="page-content hidden space-y-6">
             
-            <!-- 상단 고정 내시경 메뉴바 (위내시경, 대장내시경, 헬리코박터 순) -->
+            <!-- 상단 고정 내시경 메뉴바 (위 내시경, 대장 내시경, 헬리코박터 순) -->
             <div class="sticky top-[101px] z-30 bg-gray-100 py-2 -mx-4 px-4 overflow-x-auto hide-scrollbar flex gap-2 border-b border-gray-200 shadow-sm">
-                <button onclick="scrollToSection('endo-stomach')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">위내시경</button>
-                <button onclick="scrollToSection('endo-colon')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">대장내시경</button>
+                <button onclick="scrollToSection('endo-stomach')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">위 내시경</button>
+                <button onclick="scrollToSection('endo-colon')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">대장 내시경</button>
                 <button onclick="scrollToSection('endo-helicobacter')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">헬리코박터균</button>
                 <button onclick="scrollToSection('endo-schedule')" class="px-4 py-2.5 bg-brand-gray text-white text-sm font-bold rounded-full whitespace-nowrap flex-shrink-0 shadow-sm hover:bg-brand-orange transition">의료진 스케줄</button>
             </div>
@@ -1521,16 +1566,16 @@
                     </h2>
                 </div>      
                     <p>• 감염예방과 안전을 위한 <strong>철저한 소독 시행</strong></p>
-                    <p>• 조직검사 및 용종절제시 <strong>일회용 기구 사용</strong></p>
+                    <p>• 조직검사 및 용종 절제 시 <strong>일회용 기구 사용</strong></p>
                     <p>• 소화기 내시경 전문의가 검사 후 진료</p>
                     <p>• 위염, 헬리코박터 등 당일 처방 가능</p>
-                    <p>• 대장용종 발견시 당일 절제 가능 (추가비용)</p>
+                    <p>• 대장용종 발견 시 당일 절제 가능 (추가 비용)</p>
   
     </div>
 
 
 
-            <!-- 1. 위내시경 섹션 ( 이미지 기반) -->
+            <!-- 1. 위 내시경 섹션 ( 이미지 기반) -->
             <div id="endo-stomach" class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm space-y-4">
                 <div class="bg-brand-gray text-white p-4 rounded-xl flex justify-between items-center shadow-sm">
                     <h2 class="text-lg font-bold flex items-center gap-2">
@@ -1539,10 +1584,10 @@
                     <span class="text-xs text-orange-200 font-semibold">식도, 위, 십이지장을 관찰</span>
                 </div>
 
-                <!-- 위내시경이 필요한 경우 -->
+                <!-- 위 내시경이 필요한 경우 -->
                 <div class="p-3.5 bg-gray-50 rounded-xl border border-gray-200 space-y-2">
                     <span class="font-bold text-brand-dark block text-base mb-1">
-                        <i class="fa-solid fa-circle-exclamation text-brand-orange"></i> 위내시경이 필요한 경우
+                        <i class="fa-solid fa-circle-exclamation text-brand-orange"></i> 위 내시경이 필요한 경우
                     </span>
                     <ul class="text-sm text-gray-800 space-y-1 font-medium pl-1">
                         <li>- 상복부 불쾌감, 통증, 속쓰림</li>
@@ -1573,7 +1618,7 @@
                 </div>
             </div>
 
-            <!-- 2. 대장내시경 섹션 ( 이미지 기반) -->
+            <!-- 2. 대장 내시경 섹션 ( 이미지 기반) -->
             <div id="endo-colon" class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm space-y-4">
                 <div class="bg-brand-gray text-white p-4 rounded-xl flex justify-between items-center shadow-sm">
                     <h2 class="text-lg font-bold flex items-center gap-2">
@@ -1583,10 +1628,10 @@
                 </div>
 
 
-                <!-- 대장내시경이 필요한 경우 -->
+                <!-- 대장 내시경이 필요한 경우 -->
                 <div class="p-3.5 bg-gray-50 rounded-xl border border-gray-200 space-y-2">
                     <span class="font-bold text-brand-dark block text-base mb-1">
-                        <i class="fa-solid fa-circle-exclamation text-brand-orange"></i> 대장내시경이 필요한 경우
+                        <i class="fa-solid fa-circle-exclamation text-brand-orange"></i> 대장 내시경이 필요한 경우
                     </span>
                     <ul class="text-sm text-gray-800 space-y-1 font-medium pl-1">
                         <li>- 대변을 봐도 시원하지 않음</li>
@@ -1619,7 +1664,7 @@
                     </ul>
                 </div>
                       <p class="text-sm text-gray-600 font-medium mt-2">
-    <strong class="text-gray-700">※ 대장내시경 예약 안내:</strong> 내원 후 전문 의료진과 상담을 거쳐 예약이 진행됩니다.
+    <strong class="text-gray-700">※ 대장 내시경 예약 안내:</strong> 내원 후 전문 의료진과 상담을 거쳐 예약이 진행됩니다.
 </p></div>
 
             <!-- 3. 헬리코박터균 섹션 ( 이미지 기반) -->
@@ -1642,7 +1687,7 @@
     <!-- 진단 -->
 <div class="p-3.5 bg-gray-50 rounded-xl border border-gray-200 text-sm text-gray-800">
     <strong class="text-brand-orange font-bold mr-1.5">진단:</strong>
-    내시경이나 혈액검사 등<br> (특히 위내시경이 정확!)
+    내시경이나 혈액검사 등<br> (특히 위 내시경이 정확!)
 </div>
 
     <!-- 치료 -->
@@ -1653,7 +1698,7 @@
 
                 <div class="p-3 bg-orange-50 rounded-xl border border-orange-200 text-center">
                     <p class="text-sm font-bold text-brand-dark">
-                        ※ 헬리코박터균 검사를 원하시는 분은 <span class="text-brand-orange">내시경 전!</span> <br>직원에게 문의해 주세요! (추가비용 발생)
+                        ※ 헬리코박터균 검사를 원하시는 분은 <span class="text-brand-orange">내시경 전!</span> <br>직원에게 문의해 주세요! (추가 비용 발생)
                     </p>
                 </div>
             </div>
@@ -1735,18 +1780,18 @@
         </section>
     </main>
     
-<!-- 하단 푸터 (정보 & 지도 및 전화 연동 & 문의시간) -->
+<!-- 하단 푸터 (정보 & 지도 및 전화 연동 & 문의 시간) -->
 <footer class="max-w-md mx-auto mt-8 px-4">
     <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm space-y-4 text-sm text-gray-800">
         <h3 class="font-bold text-brand-dark text-base border-b border-gray-100 pb-2">양정분 검진센터 오시는 길 & 안내</h3>
         
         <div class="space-y-3">
-            <!-- 문의시간 -->
+            <!-- 문의 시간 -->
             <div class="bg-gray-50 p-3.5 rounded-xl border border-gray-200 space-y-1">
                 <span class="font-bold text-brand-dark flex items-center gap-1.5 mb-1">
-                    <i class="fa-solid fa-clock text-brand-orange"></i> 문의시간 안내
+                    <i class="fa-solid fa-clock text-brand-orange"></i> 문의 시간 안내
                 </span>
-                <p class="text-gray-700">평 일&nbsp;: 08:00~17:00&nbsp;&nbsp; (※ 점심시간:13:00~14:00)</p>
+                <p class="text-gray-700">평일&nbsp;: 08:00~17:00&nbsp;&nbsp; (※ 점심시간: 13:00~14:00)</p>
                 <p class="text-gray-700">토요일&nbsp;: 08:00~12:00 &nbsp;&nbsp;&nbsp;(일요일, 공휴일 휴무)</p>
             </div>
 
@@ -2186,11 +2231,12 @@ function toggleBloodTest(id, button) {
     "2027-05-05", // 어린이날
     "2027-05-13", // 부처님오신날
     "2027-06-06", // 현충일
+    "2027-07-17", "2027-07-19", // 제헌절 및 대체공휴일
     "2027-08-15", "2027-08-16", // 광복절 및 대체공휴일
     "2027-09-14", "2027-09-15", "2027-09-16", // 추석 연휴
     "2027-10-03", "2027-10-04", // 개천절 및 대체공휴일
     "2027-10-09", "2027-10-11", // 한글날 및 대체공휴일
-    "2027-12-25"  // 성탄절
+    "2027-12-25", "2027-12-27" // 성탄절 및 대체공휴일
   ];
 
   function checkBusinessHours() {
@@ -2209,9 +2255,9 @@ function toggleBloodTest(id, button) {
     const currentInMinutes = hours * 60 + minutes;
 
     // 실제 전화 연결 허용 시간 설정 (분 단위)
-    const allowStart = 7 * 60 + 30;     // 07:30 (450분)
-    const weekdayAllowEnd = 18 * 60;    // 18:00 (1080분)
-    const saturdayAllowEnd = 14 * 60;   // 14:00 (840분)
+    const allowStart = 7 * 60 + 50;     // 07:50 (470분)
+    const weekdayAllowEnd = 17 * 60;    // 17:00 (1020분)
+    const saturdayAllowEnd = 12 * 60;   // 12:00 (720분)
 
     const isHoliday = holidays.includes(todayStr);
     const isSunday = (dayOfWeek === 0);
@@ -2219,7 +2265,7 @@ function toggleBloodTest(id, button) {
 
     let isOffHours = false;
 
-    // 전화 연결 가능 여부 판단 (평일 07:30~18:00 / 토 07:30~14:00)
+    // 전화 연결 가능 여부 판단 (평일 07:50~17:00 / 토 07:50~12:00)
     if (isSunday) {
       isOffHours = true;
     } else if (isSaturday) {
@@ -2243,9 +2289,9 @@ function toggleBloodTest(id, button) {
         reason = "일요일은 양정분 검진센터 휴무일입니다.";
       } else if (isOffHours) {
         if (isSaturday) {
-          reason = "현재는 토요일 문의가능시간(08:00 ~ 12:00)이 아닙니다.";
+          reason = "현재는 토요일 문의 가능 시간(08:00 ~ 12:00)이 아닙니다.";
         } else {
-          reason = "현재는 평일 문의가능시간(08:00 ~ 17:00)이 아닙니다.";
+          reason = "현재는 평일 문의 가능 시간(08:00 ~ 17:00)이 아닙니다.";
         }
       }
 
@@ -2261,5 +2307,304 @@ function toggleBloodTest(id, button) {
   
     
 
+<dialog id="screening-sms-dialog" aria-labelledby="screening-sms-title"
+        class="m-auto w-[calc(100%-2rem)] max-w-md max-h-[90dvh] overflow-y-auto rounded-xl bg-white p-5 text-gray-900 shadow-xl backdrop:bg-black/50">
+    <div class="flex items-center justify-between gap-4">
+        <h2 id="screening-sms-title" class="text-lg font-bold">종합검진 예약 문자</h2>
+        <button type="button" id="close-screening-sms" class="rounded px-2 py-1 text-sm text-gray-700">닫기</button>
+    </div>
+    <p class="mt-2 text-sm text-gray-600">문자 앱에서 내용을 확인한 뒤 전송해 주세요. 예약 일정은 검진센터 회신으로 확인해 주세요.</p>
+    <form id="screening-sms-form" class="mt-4 grid gap-3">
+        <label class="grid gap-1 text-sm font-semibold">
+            이름
+            <input name="patientName" type="text" autocomplete="name" maxlength="50" required
+                   class="w-full rounded-lg border border-gray-400 px-3 py-2 text-base font-normal">
+        </label>
+        <label class="grid gap-1 text-sm font-semibold">
+            생년월일
+            <input name="birthDate" type="text" placeholder="예 19900101" required
+                   class="w-full min-w-0 rounded-lg border border-gray-400 px-3 py-2 text-base font-normal">
+        </label>
+        <div class="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-3">
+            <label class="grid gap-1 text-sm font-semibold">
+                희망 날짜 (선택)
+                <input name="preferredDate" type="date"
+                       class="w-full min-w-0 rounded-lg border border-gray-400 px-3 py-2 text-base font-normal disabled:bg-gray-100">
+            </label>
+            <label class="flex min-h-11 items-center gap-2 whitespace-nowrap text-sm">
+                <input name="decideAfterConsultation" type="checkbox" class="h-4 w-4">
+                상담 후 결정
+            </label>
+        </div>
+        <label class="grid gap-1 text-sm font-semibold">
+            요청사항 (선택)
+            <textarea name="request" rows="2" maxlength="200"
+                      class="w-full rounded-lg border border-gray-400 px-3 py-2 text-base font-normal"></textarea>
+        </label>
+        <button type="submit" class="rounded-lg bg-green-600 px-4 py-2 font-semibold text-white hover:bg-green-700">SMS 보내기</button>
+    </form>
+    <p id="screening-sms-handoff" role="status" class="mt-2 text-sm text-gray-600"></p>
+    <details id="screening-sms-fallback" hidden class="mt-3 border-t pt-3">
+        <summary class="cursor-pointer text-sm font-semibold text-gray-700">문자 내용이 비어 있나요?</summary>
+        <label for="screening-sms-message" class="block text-sm text-gray-600">
+            문자 앱에 내용이 비어 있으면 아래 내용을 복사해 붙여넣어 주세요.
+        </label>
+        <textarea id="screening-sms-message" rows="4" readonly
+                  class="mt-2 w-full rounded-lg border border-gray-400 p-2 text-base"></textarea>
+        <button type="button" id="copy-screening-sms" class="mt-1 rounded-lg border border-gray-400 px-3 py-1.5 text-sm">내용 복사</button>
+        <p id="screening-sms-status" role="status" class="mt-1 text-sm text-gray-600"></p>
+    </details>
+</dialog>
+<script id="screening-sms-script">
+    (() => {
+        const dialog = document.getElementById('screening-sms-dialog');
+        const form = document.getElementById('screening-sms-form');
+        const name = form.elements.namedItem('patientName');
+        const preferredDate = form.elements.namedItem('preferredDate');
+        const consultation = form.elements.namedItem('decideAfterConsultation');
+        consultation.addEventListener('change', () => {
+            preferredDate.disabled = consultation.checked;
+        });
+        const fallback = document.getElementById('screening-sms-fallback');
+        const handoff = document.getElementById('screening-sms-handoff');
+        const message = document.getElementById('screening-sms-message');
+        const status = document.getElementById('screening-sms-status');
+        const recipient = '010-4232-8058';
+
+        document.getElementById('open-screening-sms').addEventListener('click', () => {
+            dialog.showModal();
+        });
+        document.getElementById('close-screening-sms').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('close', () => {
+            form.reset();
+            preferredDate.disabled = consultation.checked;
+            name.setCustomValidity('');
+            fallback.hidden = true;
+            fallback.open = false;
+            handoff.textContent = '';
+            message.value = '';
+            status.textContent = '';
+        });
+        name.addEventListener('input', () => name.setCustomValidity(''));
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const data = new FormData(form);
+            const patientName = data.get('patientName').trim();
+            if (!patientName) {
+                name.setCustomValidity('이름을 입력해 주세요.');
+                name.reportValidity();
+                return;
+            }
+
+            const lines = [
+                '[종합검진 예약 문의]',
+                '이름: ' + patientName,
+                '생년월일: ' + data.get('birthDate').trim()
+            ];
+            const date = consultation.checked ? '상담 후 결정' : data.get('preferredDate');
+            if (date) lines.push('희망 날짜: ' + date);
+            const request = data.get('request').trim();
+            if (request) lines.push('요청사항: ' + request);
+
+            message.value = lines.join('\n');
+            status.textContent = '';
+            fallback.hidden = false;
+            const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent)
+                || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            const isMobile = isIOS || /Android/i.test(navigator.userAgent);
+            handoff.textContent = isMobile
+                ? '문자 앱에서 받는 번호와 내용을 확인한 뒤 전송해 주세요.'
+                : 'PC에서 문자 앱이 열리지 않으면 휴대폰의 Safari 또는 Chrome에서 이 페이지를 열어 주세요.';
+            const separator = isIOS ? '&' : '?';
+            window.location.href = 'sms:' + recipient + separator + 'body=' + encodeURIComponent(message.value);
+        });
+
+        document.getElementById('copy-screening-sms').addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(message.value);
+                status.textContent = '문자 내용을 복사했어요.';
+            } catch {
+                message.focus();
+                message.select();
+                status.textContent = '선택된 내용을 복사해 주세요.';
+            }
+        });
+    })();
+</script>
+<dialog id="checkup-guide" aria-labelledby="checkup-guide-title"
+        class="m-auto w-[calc(100%-2rem)] max-w-md max-h-[90dvh] overflow-hidden open:flex open:flex-col rounded-xl bg-white p-5 text-gray-900 shadow-xl backdrop:bg-black/50">
+    <div class="flex shrink-0 items-center justify-between gap-3 border-b border-gray-200 pb-3">
+        <h2 id="checkup-guide-title" class="text-lg font-bold text-brand-dark">2026년 내 검진 알아보기</h2>
+        <button type="button" id="close-checkup-guide"
+                class="shrink-0 text-2xl font-bold leading-none text-gray-400 hover:text-gray-600" aria-label="닫기">&times;</button>
+    </div>
+    <div class="min-h-0 overflow-y-auto">
+        <form id="checkup-guide-form" class="mt-4 space-y-3">
+            <label class="block text-sm font-semibold">
+                출생연도
+                <input id="checkup-birth-year" type="text" inputmode="numeric" pattern="[0-9]{4}"
+                       maxlength="4" placeholder="예 1974" title="출생연도 네 자리를 입력해 주세요." required
+                       class="mt-1 w-full rounded-lg border border-gray-400 px-3 py-2 text-base font-normal">
+            </label>
+            <fieldset>
+                <legend class="text-sm font-semibold">성별</legend>
+                <div class="mt-1 grid grid-cols-2 gap-2">
+                    <label class="flex items-center gap-2 rounded-lg border border-gray-400 px-3 py-2 text-base">
+                        <input type="radio" name="checkup-sex" value="female" required class="h-4 w-4 accent-orange-600"> 여성
+                    </label>
+                    <label class="flex items-center gap-2 rounded-lg border border-gray-400 px-3 py-2 text-base">
+                        <input type="radio" name="checkup-sex" value="male" class="h-4 w-4 accent-orange-600"> 남성
+                    </label>
+                </div>
+            </fieldset>
+            <button type="submit" class="w-full rounded-lg bg-brand-orange px-4 py-2 font-bold text-white hover:bg-orange-600">검진 항목 보기</button>
+        </form>
+        <div id="checkup-guide-result" class="mt-4" aria-live="polite"></div>
+        <p class="mt-4 text-sm text-gray-600"><strong>출생연도와 성별로 보는 간편 안내예요.</strong> 최종 대상 항목은 국민건강보험공단에서 본인 인증 후 확인해 주세요.</p>
+        <a href="https://www.nhis.or.kr/nhis/index.do" target="_blank" rel="noopener"
+           class="mt-2 inline-block text-sm font-semibold text-orange-800 underline">국민건강보험공단에서 대상 확인</a>
+        <button type="button" id="close-checkup-guide-bottom"
+                class="mt-4 w-full py-3 bg-gray-100 text-gray-700 rounded-xl font-bold hover:bg-gray-200 transition">
+            닫기
+        </button>
+    </div>
+</dialog>
+<script id="checkup-guide-script">
+    (() => {
+        const screeningYear = 2026;
+        const dialog = document.getElementById('checkup-guide');
+        const form = document.getElementById('checkup-guide-form');
+        const input = document.getElementById('checkup-birth-year');
+        const result = document.getElementById('checkup-guide-result');
+
+        document.getElementById('open-checkup-guide').addEventListener('click', () => dialog.showModal());
+        document.getElementById('close-checkup-guide').addEventListener('click', () => dialog.close());
+        document.getElementById('close-checkup-guide-bottom').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('close', () => {
+            form.reset();
+            input.setCustomValidity('');
+            result.replaceChildren();
+        });
+        form.addEventListener('input', () => {
+            input.setCustomValidity('');
+            result.replaceChildren();
+        });
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const birthYear = Number(input.value);
+            if (birthYear < 1900 || birthYear > screeningYear) {
+                input.setCustomValidity('1900년부터 2026년 사이의 출생연도를 입력해 주세요.');
+                input.reportValidity();
+                return;
+            }
+
+            const isFemale = new FormData(form).get('checkup-sex') === 'female';
+            const age = screeningYear - birthYear;
+            const matchingYear = age % 2 === 0;
+            const items = [];
+            if (age >= 20 && matchingYear) {
+                items.push('일반건강검진 · 20세 이상 격년제 기준. 가입 자격에 따라 달라져요.');
+                items.push(age === 40
+                    ? '구강검진 · 일반건강검진 공통 항목. 40세는 치면세균막 검사 포함'
+                    : '구강검진 · 일반건강검진 공통 항목');
+                if (isFemale) items.push('자궁경부암 검진 · 20세 이상 여성');
+            }
+            if (age >= 40 && matchingYear) {
+                items.push('위암 검진 · 40세 이상');
+                if (isFemale) items.push('유방암 검진 · 40세 이상 여성');
+            }
+            const lipidStartAge = isFemale ? 40 : 24;
+            if (age >= lipidStartAge && (age - lipidStartAge) % 4 === 0) {
+                items.push('이상지질혈증 · 총콜레스테롤, 고밀도·저밀도 콜레스테롤, 중성지방');
+            }
+            if (age === 40) items.push('B형간염 · 보균자·면역자 제외');
+            if (age === 56) items.push('C형간염 · 56세');
+            if ([56, 66].includes(age)) items.push('폐기능 · 56·66세');
+            if (isFemale && [54, 60, 66].includes(age)) items.push('골밀도 · 54·60·66세 여성');
+
+            if (age >= 20 && age <= 34 && matchingYear) {
+                items.push('정신건강검사(우울증) · 20~34세, 2년마다');
+                items.push('조기정신증 · 20~34세, 2년마다');
+            }
+            if (age >= 35 && age <= 79) {
+                const rangeStart = age < 40 ? 35 : Math.floor(age / 10) * 10;
+                const rangeEnd = age < 40 ? 39 : rangeStart + 9;
+                items.push('정신건강검사(우울증) · ' + rangeStart + '~' + rangeEnd + '세 구간 1회. 수검 이력과 올해 대상 여부는 공단에서 확인해 주세요.');
+            }
+            if ([40, 50, 60, 70].includes(age)) items.push('생활습관평가 · 40·50·60·70세');
+            if ([66, 70, 80].includes(age)) items.push('노인신체기능검사 · 66·70·80세');
+            if (age >= 66 && matchingYear) items.push('인지기능장애검사 · 66세 이상, 2년에 1회');
+
+            if (age >= 50) items.push('대장암 검진 · 50세 이상, 매년.');
+            if (age >= 40) items.push('간암 검진 · 40세 이상 공단 선정 고위험군');
+            if (age >= 54 && age <= 74) items.push('폐암 검진 · 54~74세 공단 선정 고위험군');
+
+            const heading = document.createElement('h3');
+            heading.className = 'text-base font-extrabold';
+            heading.textContent = screeningYear + '년 확인할 검진 항목';
+            result.replaceChildren(heading);
+
+            if (items.length) {
+                const list = document.createElement('ul');
+                list.className = 'mt-2 divide-y divide-gray-200 rounded-xl border border-gray-300 bg-gray-50 px-3 text-sm text-gray-800';
+                items.forEach((item) => {
+                    const row = document.createElement('li');
+                    const [title, detail] = item.split(' · ');
+                    const label = document.createElement('strong');
+                    label.textContent = title;
+                    row.className = 'py-2 leading-relaxed';
+                    const icon = document.createElement('span');
+                    icon.className = 'mt-0.5 grid h-5 w-5 shrink-0 place-items-center text-base font-bold text-black';
+                    icon.setAttribute('aria-hidden', 'true');
+                    icon.textContent = '✓';
+                    const text = document.createElement('span');
+                    text.append(label, ' · ' + detail);
+                    if (title === '대장암 검진') {
+                        const coverage = document.createElement('strong');
+                        coverage.className = 'block';
+                        coverage.textContent = '이 검사에서 이상이 있어야 대장 내시경 지원됨 (수면비 별도)';
+                        text.append(coverage);
+                    }
+                    if (title === '폐암 검진') {
+                        const availability = document.createElement('strong');
+                        availability.className = 'ml-2 inline-block rounded bg-gray-200 px-2 py-0.5 text-xs text-gray-800';
+                        availability.textContent = '본원 미실시';
+                        text.append(availability);
+                    }
+                    const itemLine = document.createElement('div');
+                    itemLine.className = 'flex items-start gap-2';
+                    itemLine.append(icon, text);
+                    row.append(itemLine);
+                    const riskDescription = {
+                        '간암 검진': '간경변증, B형 간염 항원 양성, C형 간염 항체 양성, B형·C형 간염으로 인한 만성 간질환 등이 대표 기준이에요.',
+                        '폐암 검진': '30갑년 이상 흡연력이 대표 기준이에요. 하루 한 갑씩 30년간 흡연하면 30갑년이며, 금연한 경우에는 별도 기준이 적용돼요.'
+                    }[title];
+                    if (riskDescription) {
+                        const disclosure = document.createElement('details');
+                        disclosure.className = 'ml-7 mt-1 text-sm text-gray-600';
+                        const summary = document.createElement('summary');
+                        summary.className = 'cursor-pointer font-medium text-orange-800';
+                        summary.textContent = '고위험군 기준 보기';
+                        const description = document.createElement('p');
+                        description.className = 'mt-1';
+                        description.textContent = riskDescription;
+                        disclosure.append(summary, description);
+                        row.append(disclosure);
+                    }
+                    list.append(row);
+                });
+                result.append(list);
+            }
+
+            const note = document.createElement('p');
+            note.className = 'mt-2 text-sm text-gray-600';
+            note.textContent = '비사무직 직장가입자는 출생연도와 관계없이 매년 일반건강검진(구강검진 포함) 대상이에요. 이월·추가 등록 등 개인별 대상 여부도 공단에서 확인해 주세요.';
+            if (!items.length) heading.textContent = '출생연도만으로 안내할 항목이 없어요.';
+            result.append(note);
+        });
+    })();
+</script>
 </body>
 </html>
